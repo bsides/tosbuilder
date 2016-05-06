@@ -163,8 +163,7 @@ angular.module('ToSBuilder.services', [])
    *
    */
 
-  var jobs =
-  [
+  var jobs = [
     /**
      * Archer
      */
@@ -265,27 +264,75 @@ angular.module('ToSBuilder.services', [])
     },
     {
       index: 3,
+      name: 'Priest',
+      rank: 2,
+      circles: 3
+    },
+    {
+      index: 4,
       name: 'Bokor',
       rank: 3,
       circles: 3
     },
     {
-      index: 4,
-      name: 'Dievdibby',
+      index: 5,
+      name: 'Dievdirby',
       rank: 3,
       circles: 3
     },
     {
-      index: 5,
+      index: 6,
       name: 'Paladin',
       rank: 4,
       circles: 3
     },
     {
-      index: 6,
+      index: 7,
+      name: 'Sadhu',
+      rank: 4,
+      circles: 3
+    },
+    {
+      index: 8,
+      name: 'Chaplain',
+      rank: 5,
+      circles: 1
+    },
+    {
+      index: 9,
       name: 'Monk',
       rank: 5,
       circles: 3
+    },
+    {
+      index: 10,
+      name: 'Pardoner',
+      rank: 5,
+      circles: 3
+    },
+    {
+      index: 11,
+      name: 'Druid',
+      rank: 6,
+      circles: 2
+    },
+    {
+      index: 12,
+      name: 'Oracle',
+      rank: 6,
+      circles: 2
+    },
+    {
+      index: 13,
+      name: 'Kabalist',
+      rank: 7,
+      circles: 1
+    },
+    {
+      index: 14,
+      name: 'Plague Doctor',
+      rank: 7,
+      circles: 1
     }
   ],
   [
