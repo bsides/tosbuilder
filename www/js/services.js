@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('ToSBuilder.services', [])
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
@@ -49,6 +49,113 @@ angular.module('starter.services', [])
   };
 })
 .factory('Jobs', function() {
+
+  /**
+   * Raw data
+   *
+   * Archer
+   * Cleric
+   * Swordsman
+   * Wizard
+   *
+   * ---
+   * A R2
+   * Ranger
+   * Quarrel Shooter
+   *
+   * A R3
+   * Sapper
+   * Hunter
+   *
+   * A R4
+   * Wuguchi
+   * Scout
+   *
+   * A R5
+   * Rogue
+   * Fletcher
+   *
+   * A R6
+   * Falconer
+   * Schwarzer Reiter
+   *
+   * A R7
+   * Canoneer
+   * Musketeer
+   *
+   * ---
+   * C R2
+   * Priest
+   * Krivis
+   *
+   * C R3
+   * Bokor
+   * Dievdirby
+   *
+   * C R4
+   * Sadhu
+   * Paladin
+   *
+   * C R5
+   * Monk
+   * Pardoner
+   * Chaplain *
+   *
+   * C R6
+   * Oracle
+   * Druid
+   *
+   * C R7
+   * Plague Doctor
+   * Kabalist
+   *
+   * ---
+   * S R2
+   * Highlander
+   * Peltasta
+   *
+   * S R3
+   * Barbarian
+   * Hoplite
+   *
+   * S R4
+   * Rodelero
+   * Cataphract
+   *
+   * S R5
+   * Squire
+   * Corsair
+   *
+   * S R6
+   * Doppelsoedner
+   * Fencer
+   *
+   * S R7
+   * Dragoon
+   * Templar
+   * Shinobi *
+   *
+   * ---
+   * W R2
+   * Cryomancer
+   * Pyromancer
+   *
+   * W R3
+   * Linker
+   * Psichokino
+   *
+   * W R4
+   * Thaumaturge
+   * Elementalist
+   *
+   * W R5
+   * Sorcerer
+   * Chronomancer
+   *
+   * W R6
+   *
+   *
+   */
 
   var jobs = [{
     id: 0,
