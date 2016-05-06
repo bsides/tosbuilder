@@ -165,6 +165,9 @@ angular.module('ToSBuilder.services', [])
 
   var jobs =
   [
+    /**
+     * Archer
+     */
     {
       index: 1,
       name: 'Archer',
@@ -248,6 +251,42 @@ angular.module('ToSBuilder.services', [])
     /**
      * Cleric
      */
+    {
+      index: 1,
+      name: 'Cleric',
+      rank: 1,
+      circles: 3
+    },
+    {
+      index: 2,
+      name: 'Krivis',
+      rank: 2,
+      circles: 3
+    },
+    {
+      index: 3,
+      name: 'Bokor',
+      rank: 3,
+      circles: 3
+    },
+    {
+      index: 4,
+      name: 'Dievdibby',
+      rank: 3,
+      circles: 3
+    },
+    {
+      index: 5,
+      name: 'Paladin',
+      rank: 4,
+      circles: 3
+    },
+    {
+      index: 6,
+      name: 'Monk',
+      rank: 5,
+      circles: 3
+    }
   ],
   [
     /**
