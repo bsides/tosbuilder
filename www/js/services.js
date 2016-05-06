@@ -151,19 +151,115 @@ angular.module('ToSBuilder.services', [])
    * W R5
    * Sorcerer
    * Chronomancer
+   * Runecaster *
    *
    * W R6
+   * Necromancer
+   * Alchemist
    *
+   * W R7
+   * Warlock
+   * Featherfoot
    *
    */
 
-  var jobs = [{
-    id: 0,
-    name: 'Swordsman'
-  }, {
-    id: 1,
-    name: 'Archer'
-  }];
+  var jobs =
+  [
+    {
+      index: 1,
+      name: 'Archer',
+      rank: 1,
+      circles: 3
+    },
+    {
+      index: 2,
+      name: 'Quarrel Shooter',
+      rank: 2,
+      circles: 3
+    },
+    {
+      index: 3,
+      name: 'Ranger',
+      rank: 2,
+      circles: 3
+    },
+    {
+      index: 4,
+      name: 'Hunter',
+      rank: 3,
+      circles: 3
+    },
+    {
+      index: 5,
+      name: 'Sapper',
+      rank: 3,
+      circles: 3
+    },
+    {
+      index: 6,
+      name: 'Scout',
+      rank: 4,
+      circles: 3,
+    },
+    {
+      index: 7,
+      name: 'Wuguchi',
+      rank: 4,
+      circles: 3
+    },
+    {
+      index: 8,
+      name: 'Fletcher',
+      rank: 5,
+      circles: 3
+    },
+    {
+      index: 9,
+      name: 'Rogue',
+      rank: 5,
+      circles: 3
+    },
+    {
+      index: 10,
+      name: 'Falconer',
+      rank: 6,
+      circles: 2
+    },
+    {
+      index: 11,
+      name: 'Schwarzer Reiter',
+      rank: 6,
+      circles: 2
+    },
+    {
+      index: 12,
+      name: 'Canoneer',
+      rank: 7,
+      circles: 1
+    },
+    {
+      index: 13,
+      name: 'Musketeer',
+      rank: 7,
+      circles: 1
+    }
+  ],
+  [
+    /**
+     * Cleric
+     */
+  ],
+  [
+    /**
+     * Swordsman
+     */
+  ],
+  [
+    /**
+     * Wizard
+     */
+  ]
+  ;
 
   return {
     all: function() {
