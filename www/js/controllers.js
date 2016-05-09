@@ -1,5 +1,30 @@
 angular.module('ToSBuilder.controllers', [])
 
+.controller('AuthCtrl', function($scope) {
+  var isNewUser = true;
+
+  var ref = new Firebase('https://tosbuilder.firebaseio.com');
+  ref.onAuth(function(authData) {
+    if (authData && isNewUser) {
+      ref.child('users').child(authData.uid).set({
+        provider: authData.provider,
+        name: getName(authData)
+      });
+    };
+  });
+
+  var getName = function(authData) {
+    switch(authData.provider) {
+      case 'password':
+        return authData.password.email.replace(/@.*/, '');
+      case 'twitter':
+        return authData.twitter.displayName;
+      case 'facebook':
+        return authData.facebook.displayName;
+    }
+  }
+})
+
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -27,17 +52,39 @@ angular.module('ToSBuilder.controllers', [])
   };
 })
 
-.controller('JobsCtrl', function($scope, Jobs) {
-  $scope.jobs = Jobs.all();
-  $scope.remove = function(job) {
-    Jobs.remove(job);
+.controller('JobsCtrl', function($scope, $log, Jobs) {
+  var jobs = Jobs;
+  // $scope.remove = function(job) {
+  //   Jobs.remove(job);
+  // };
+
+  $scope.jobs = [];
+  Jobs.$loaded().then(function() {
+    // $scope.jobs = Jobs;
+    // $log.log($scope.jobs);
+    angular.forEach(Jobs, function(val, key) {
+      $scope.jobs.push(val);
+      // $log.log(val);
+    });
+  });
+
+
+  $scope.range = function(n) {
+    return new Array(n);
   };
+
+  $scope.canChooseClass = function(current, parent) {
+    var isRankPossible = parent.rank < current.rank ? true : false;
+    var isCirclePossible = current.circles >= 1 && current.circles <= 3;
+    return isRankPossible && isCirclePossible;
+  };
+
 })
 
 .controller('JobDetailCtrl', function($scope, $stateParams, Jobs) {
   $scope.job = Jobs.get($stateParams.jobId);
 })
-;
+
 
 /**
  * Fluxo das telas

@@ -1,0 +1,328 @@
+{
+  "Jobs": {
+    "Archer": {
+      "index": 1,
+      "name": "Archer",
+      "rank": 1,
+      "circles": 3
+    },
+    "Quarrel Shooter": {
+      "index": 2,
+      "name": "Quarrel Shooter",
+      "rank": 2,
+      "circles": 3
+    },
+    "Ranger": {
+      "index": 3,
+      "name": "Ranger",
+      "rank": 2,
+      "circles": 3
+    },
+    "Hunter": {
+      "index": 4,
+      "name": "Hunter",
+      "rank": 3,
+      "circles": 3
+    },
+    "Sapper": {
+      "index": 5,
+      "name": "Sapper",
+      "rank": 3,
+      "circles": 3
+    },
+    "Scout": {
+      "index": 6,
+      "name": "Scout",
+      "rank": 4,
+      "circles": 3
+    },
+    "Wuguchi": {
+      "index": 7,
+      "name": "Wuguchi",
+      "rank": 4,
+      "circles": 3
+    },
+    "Fletcher": {
+      "index": 8,
+      "name": "Fletcher",
+      "rank": 5,
+      "circles": 3
+    },
+    "Rogue": {
+      "index": 9,
+      "name": "Rogue",
+      "rank": 5,
+      "circles": 3
+    },
+    "Falconer": {
+      "index": 10,
+      "name": "Falconer",
+      "rank": 6,
+      "circles": 2
+    },
+    "Schwarzer Reiter": {
+      "index": 11,
+      "name": "Schwarzer Reiter",
+      "rank": 6,
+      "circles": 2
+    },
+    "Canoneer": {
+      "index": 12,
+      "name": "Canoneer",
+      "rank": 7,
+      "circles": 1
+    },
+    "Musketeer": {
+      "index": 13,
+      "name": "Musketeer",
+      "rank": 7,
+      "circles": 1
+    },
+    "Cleric": {
+      "index": 1,
+      "name": "Cleric",
+      "rank": 1,
+      "circles": 3
+    },
+    "Krivis": {
+      "index": 2,
+      "name": "Krivis",
+      "rank": 2,
+      "circles": 3
+    },
+    "Priest": {
+      "index": 3,
+      "name": "Priest",
+      "rank": 2,
+      "circles": 3
+    },
+    "Bokor": {
+      "index": 4,
+      "name": "Bokor",
+      "rank": 3,
+      "circles": 3
+    },
+    "Dievdirby": {
+      "index": 5,
+      "name": "Dievdirby",
+      "rank": 3,
+      "circles": 3
+    },
+    "Paladin": {
+      "index": 6,
+      "name": "Paladin",
+      "rank": 4,
+      "circles": 3
+    },
+    "Sadhu": {
+      "index": 7,
+      "name": "Sadhu",
+      "rank": 4,
+      "circles": 3
+    },
+    "Chaplain": {
+      "index": 8,
+      "name": "Chaplain",
+      "rank": 5,
+      "circles": 1
+    },
+    "Monk": {
+      "index": 9,
+      "name": "Monk",
+      "rank": 5,
+      "circles": 3
+    },
+    "Pardoner": {
+      "index": 10,
+      "name": "Pardoner",
+      "rank": 5,
+      "circles": 3
+    },
+    "Druid": {
+      "index": 11,
+      "name": "Druid",
+      "rank": 6,
+      "circles": 2
+    },
+    "Oracle": {
+      "index": 12,
+      "name": "Oracle",
+      "rank": 6,
+      "circles": 2
+    },
+    "Kabalist": {
+      "index": 13,
+      "name": "Kabalist",
+      "rank": 7,
+      "circles": 1
+    },
+    "Plague Doctor": {
+      "index": 14,
+      "name": "Plague Doctor",
+      "rank": 7,
+      "circles": 1
+    },
+    "Swordsman": {
+      "index": 1,
+      "name": "Swordsman",
+      "rank": 1,
+      "circles": 3
+    },
+    "Highlander": {
+      "index": 2,
+      "name": "Highlander",
+      "rank": 2,
+      "circles": 3
+    },
+    "Peltasta": {
+      "index": 3,
+      "name": "Peltasta",
+      "rank": 2,
+      "circles": 3
+    },
+    "Barbarian": {
+      "index": 4,
+      "name": "Barbarian",
+      "rank": 3,
+      "circles": 3
+    },
+    "Cataphract": {
+      "index": 5,
+      "name": "Cataphract",
+      "rank": 4,
+      "circles": 3
+    },
+    "Rodelero": {
+      "index": 6,
+      "name": "Rodelero",
+      "rank": 4,
+      "circles": 3
+    },
+    "Corsair": {
+      "index": 7,
+      "name": "Corsair",
+      "rank": 5,
+      "circles": 3
+    },
+    "Squire": {
+      "index": 8,
+      "name": "Squire",
+      "rank": 5,
+      "circles": 3
+    },
+    "Doppelsoedner": {
+      "index": 9,
+      "name": "Doppelsoedner",
+      "rank": 6,
+      "circles": 2
+    },
+    "Fencer": {
+      "index": 10,
+      "name": "Fencer",
+      "rank": 6,
+      "circles": 2
+    },
+    "Dragoon": {
+      "index": 11,
+      "name": "Dragoon",
+      "rank": 7,
+      "circles": 1
+    },
+    "Shinobi": {
+      "index": 12,
+      "name": "Shinobi",
+      "rank": 7,
+      "circles": 1
+    },
+    "Templar": {
+      "index": 13,
+      "name": "Templar",
+      "rank": 7,
+      "circles": 1
+    },
+    "Wizard": {
+      "index": 1,
+      "name": "Wizard",
+      "rank": 1,
+      "circles": 3
+    },
+    "Cryomancer": {
+      "index": 2,
+      "name": "Cryomancer",
+      "rank": 2,
+      "circles": 3
+    },
+    "Pyromancer": {
+      "index": 3,
+      "name": "Pyromancer",
+      "rank": 2,
+      "circles": 3
+    },
+    "Linker": {
+      "index": 4,
+      "name": "Linker",
+      "rank": 3,
+      "circles": 3
+    },
+    "Psichokino": {
+      "index": 5,
+      "name": "Psichokino",
+      "rank": 3,
+      "circles": 3
+    },
+    "Elementalist": {
+      "index": 6,
+      "name": "Elementalist",
+      "rank": 4,
+      "circles": 3
+    },
+    "Thaumaturge": {
+      "index": 7,
+      "name": "Thaumaturge",
+      "rank": 4,
+      "circles": 3
+    },
+    "Chronomancer": {
+      "index": 8,
+      "name": "Chronomancer",
+      "rank": 5,
+      "circles": 3
+    },
+    "Runecaster": {
+      "index": 9,
+      "name": "Runecaster",
+      "rank": 5,
+      "circles": 3
+    },
+    "Sorcerer": {
+      "index": 10,
+      "name": "Sorcerer",
+      "rank": 5,
+      "circles": 1
+    },
+    "Alchemist": {
+      "index": 11,
+      "name": "Alchemist",
+      "rank": 6,
+      "circles": 2
+    },
+    "Necromancer": {
+      "index": 12,
+      "name": "Necromancer",
+      "rank": 6,
+      "circles": 2
+    },
+    "Featherfoot": {
+      "index": 13,
+      "name": "Featherfoot",
+      "rank": 7,
+      "circles": 1
+    },
+    "Warlock": {
+      "index": 14,
+      "name": "Warlock",
+      "rank": 7,
+      "circles": 1
+    }
+  }
+}
