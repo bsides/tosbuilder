@@ -6,5 +6,68 @@
         <button ng-repeat="job in jobs | rank1" class="button button-positive button-block">{{ job.name }} <span class="ion-ios-star" ng-repeat="circle in range(job.circles) track by $index"></span></button>
       </div>
     </div>
+
+    <div ng-show="isNewBuild">
+    <div class="button-bar">
+      <a ui-sref="tabsController.newBuild" id="rank1Swordsman-button12" class="button button-dark  button-block icon-left ion-arrow-left-a">New Build</a>
+      <a ui-sref="tabsController.rank2Swordsman" id="rank1Swordsman-button11" class="button button-dark  button-block icon-right ion-arrow-right-a">Rank 2</a>
+    </div>
+    <ion-list>
+      <ion-item class="item-divider">Circle1</ion-item>
+      <ion-item class="item-avatar item-icon-right balanced">
+        <h2balanced>Thrust
+          <p>Level: 0</p>
+          <i class="icon ion-android-add-circle"></i>
+        </h2balanced>
+      </ion-item>
+      <ion-item class="item-avatar item-icon-right balanced">
+        <h2balanced>Concentration
+          <p>Level: 0</p>
+          <i class="icon ion-android-add-circle"></i>
+        </h2balanced>
+      </ion-item>
+      <ion-item class="item-avatar item-icon-right balanced">
+        <h2balanced>Gung Ho
+          <p>Level: 0</p>
+          <i class="icon ion-android-add-circle"></i>
+        </h2balanced>
+      </ion-item>
+      <ion-item class="item-avatar item-icon-right balanced">
+        <h2balanced>Bash
+          <p>Level: 0</p>
+          <i class="icon ion-android-add-circle"></i>
+        </h2balanced>
+      </ion-item>
+      <ion-item class="item-avatar item-icon-right balanced">
+        <h2balanced>Pain Barrier
+          <p>Level: 0</p>
+          <i class="icon ion-android-add-circle"></i>
+        </h2balanced>
+      </ion-item>
+      <ion-item class="item-divider">Circle 2</ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item class="item-avatar item-icon-right assertive">
+        <h2assertive>Restrain
+          <p>Level: 0</p>
+          <i class="icon ion-android-add-circle"></i>
+        </h2assertive>
+      </ion-item>
+      <ion-item class="item-avatar item-icon-right assertive">
+        <h2assertive>Pommel Beat
+          <p>Level: 0</p>
+          <i class="icon ion-android-add-circle"></i>
+        </h2assertive>
+      </ion-item>
+      <ion-item class="item-divider">Circle 3</ion-item>
+      <ion-item class="item-avatar item-icon-right assertive">
+        <h2assertive>Double Slash
+          <p>Level: 0</p>
+          <i class="icon ion-android-add-circle"></i>
+        </h2assertive>
+      </ion-item>
+    </ion-list>
+    <button id="rank1Swordsman-button5" class="button button-royal  button-block icon-left ion-android-attach">Add Attributes</button>
+    </div>
   </ion-content>
 </ion-view>

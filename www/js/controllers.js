@@ -1,89 +1,87 @@
 angular.module('ToSBuilder.controllers', [])
 
-.controller('AuthCtrl', function($scope) {
-  var isNewUser = true;
+  .controller('AuthCtrl', function ($scope) {
+    var isNewUser = true;
 
-  var ref = new Firebase('https://tosbuilder.firebaseio.com');
-  ref.onAuth(function(authData) {
-    if (authData && isNewUser) {
-      ref.child('users').child(authData.uid).set({
-        provider: authData.provider,
-        name: getName(authData)
-      });
-    };
-  });
-
-  var getName = function(authData) {
-    switch(authData.provider) {
-      case 'password':
-        return authData.password.email.replace(/@.*/, '');
-      case 'twitter':
-        return authData.twitter.displayName;
-      case 'facebook':
-        return authData.facebook.displayName;
-    }
-  }
-})
-
-.controller('DashCtrl', function($scope) {})
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-})
-
-.controller('JobsCtrl', function($scope, $log, Jobs) {
-  var jobs = Jobs;
-  // $scope.remove = function(job) {
-  //   Jobs.remove(job);
-  // };
-
-  $scope.jobs = [];
-  Jobs.$loaded().then(function() {
-    // $scope.jobs = Jobs;
-    // $log.log($scope.jobs);
-    angular.forEach(Jobs, function(val, key) {
-      $scope.jobs.push(val);
-      // $log.log(val);
+    var ref = new Firebase('https://tosbuilder.firebaseio.com');
+    ref.onAuth(function (authData) {
+      if (authData && isNewUser) {
+        ref.child('users').child(authData.uid).set({
+          provider: authData.provider,
+          name: getName(authData)
+        });
+      };
     });
-  });
+
+    var getName = function (authData) {
+      switch (authData.provider) {
+        case 'password':
+          return authData.password.email.replace(/@.*/, '');
+        case 'twitter':
+          return authData.twitter.displayName;
+        case 'facebook':
+          return authData.facebook.displayName;
+      }
+    }
+  })
+
+  .controller('DashCtrl', function ($scope) { })
+
+  .controller('ChatsCtrl', function ($scope, Chats) {
+    // With the new view caching in Ionic, Controllers are only called
+    // when they are recreated or on app start, instead of every page change.
+    // To listen for when this page is active (for example, to refresh data),
+    // listen for the $ionicView.enter event:
+    //
+    //$scope.$on('$ionicView.enter', function(e) {
+    //});
+
+    $scope.chats = Chats.all();
+    $scope.remove = function (chat) {
+      Chats.remove(chat);
+    };
+  })
+
+  .controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
+    $scope.chat = Chats.get($stateParams.chatId);
+  })
+
+  .controller('AccountCtrl', function ($scope) {
+    $scope.settings = {
+      enableFriends: true
+    };
+  })
+
+  .controller('JobsCtrl', function ($scope, $log, Utils, Jobs) {
+    var jobs = Jobs;
+    // $scope.remove = function(job) {
+    //   Jobs.remove(job);
+    // };
+
+    $scope.jobs = [];
+    Jobs.$loaded().then(function () {
+      // $scope.jobs = Jobs;
+      // $log.log($scope.jobs);
+      angular.forEach(Jobs, function (val, key) {
+        $scope.jobs.push(val);
+        // $log.log(val);
+      });
+    });
 
 
-  $scope.range = function(n) {
-    return new Array(n);
-  };
+    $scope.range = Utils.range;
 
-  $scope.canChooseClass = function(current, parent) {
-    var isRankPossible = parent.rank < current.rank ? true : false;
-    var isCirclePossible = current.circles >= 1 && current.circles <= 3;
-    return isRankPossible && isCirclePossible;
-  };
+    $scope.canChooseClass = function (current, parent) {
+      var isRankPossible = parent.rank < current.rank ? true : false;
+      var isCirclePossible = current.circles >= 1 && current.circles <= 3;
+      return isRankPossible && isCirclePossible;
+    };
 
-})
+  })
 
-.controller('JobDetailCtrl', function($scope, $stateParams, Jobs) {
-  $scope.job = Jobs.get($stateParams.jobId);
-})
+  .controller('JobDetailCtrl', function ($scope, $stateParams, Jobs) {
+    $scope.job = Jobs.get($stateParams.jobId);
+  })
 
 
 /**

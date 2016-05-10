@@ -23,6 +23,14 @@ angular.module('ToSBuilder.services', [])
     // };
   })
 
+  .factory('Utils', function () {
+    return {
+      range: function (n) {
+        return new Array(n);
+      }
+    };
+  })
+
   .factory('Chats', function () {
     // Might use a resource here that returns a JSON array
 

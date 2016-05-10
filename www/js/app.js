@@ -104,10 +104,10 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
       var justRank1 = [];
       for (var i = 0; i < job.length; i++) {
         // for (var j = 0; j < job[i].length; j++) {
-          // console.log(job[i][j]);
-          if (job[i].rank === 1) {
-            justRank1.push(job[i]);
-          };
+        // console.log(job[i][j]);
+        if (job[i].rank === 1) {
+          justRank1.push(job[i]);
+        };
         // };
       };
       return justRank1;
