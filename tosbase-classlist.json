@@ -1,0 +1,525 @@
+{
+  "Char1_1": {
+    "name": "Swordsman",
+    "base": "Warrior",
+    "icon": "c_warrior_swordsman",
+    "max_circle": 3,
+    "skills": ["Swordman_Thrust", "Swordman_Bash", "Swordman_GungHo", "Swordman_Concentrate", "Swordman_PainBarrier", "Swordman_Restrain", "Swordman_PommelBeat", "Swordman_DoubleSlash"]
+  },
+  "Char1_2": {
+    "name": "Highlander",
+    "base": "Warrior",
+    "icon": "c_warrior_highlander",
+    "max_circle": 3,
+    "skills": ["Highlander_WagonWheel", "Highlander_CartarStroke", "Highlander_Crown", "Highlander_CrossGuard", "Highlander_Moulinet", "Highlander_SkyLiner", "Highlander_CrossCut", "Highlander_ScullSwing", "Highlander_VerticalSlash"]
+  },
+  "Char1_3": {
+    "name": "Peltasta",
+    "base": "Warrior",
+    "icon": "c_warrior_peltasta",
+    "max_circle": 3,
+    "skills": ["Peltasta_UmboBlow", "Peltasta_RimBlow", "Peltasta_SwashBuckling", "Peltasta_Guardian", "Peltasta_ShieldLob", "Peltasta_HighGuard", "Peltasta_ButterFly", "Peltasta_UmboThrust", "Peltasta_Langort"]
+  },
+  "Char1_4": {
+    "name": "Hoplite",
+    "base": "Warrior",
+    "icon": "c_warrior_hoplite",
+    "max_circle": 3,
+    "skills": ["Hoplite_Stabbing", "Hoplite_Pierce", "Hoplite_Finestra", "Hoplite_SynchroThrusting", "Hoplite_LongStride", "Hoplite_SpearLunge", "Hoplite_ThrouwingSpear"]
+  },
+  "Char1_5": {
+    "name": "Centurion",
+    "base": "Warrior",
+    "icon": "c_warrior_centurion",
+    "max_circle": 3,
+    "skills": ["Centurion_Conscript", "Centurion_PhalanxFormation", "Centurion_TercioFormation", "Centurion_WingedFormation", "Centurion_WedgeFormation", "Centurion_SchiltronFormation", "Centurion_Testudo", "Centurion_Rotate", "Centurion_SpecialForceFormation"]
+  },
+  "Char1_6": {
+    "name": "Barbarian",
+    "base": "Warrior",
+    "icon": "c_warrior_barbarian",
+    "max_circle": 3,
+    "skills": ["Barbarian_Embowel", "Barbarian_StompingKick", "Barbarian_Cleave", "Barbarian_HelmChopper", "Barbarian_Warcry", "Barbarian_Frenzy", "Barbarian_Seism", "Barbarian_GiantSwing", "Barbarian_Pouncing"]
+  },
+  "Char1_7": {
+    "name": "Cataphract",
+    "base": "Warrior",
+    "icon": "c_warrior_cataphract",
+    "max_circle": 3,
+    "skills": ["Cataphract_Impaler", "Cataphract_EarthWave", "Cataphract_Trot", "Cataphract_SteedCharge", "Cataphract_DoomSpike", "Cataphract_Rush"]
+  },
+  "Char1_8": {
+    "name": "Corsair",
+    "base": "Warrior",
+    "icon": "c_warrior_corsair",
+    "max_circle": 3,
+    "skills": ["Corsair_JollyRoger", "Corsair_IronHook", "Corsair_Keelhauling", "Corsair_UnlockChest", "Corsair_DustDevil", "Corsair_SubweaponCancel", "Corsair_HexenDropper", "Corsair_PistolShot"]
+  },
+  "Char1_9": {
+    "name": "Doppelsoeldner",
+    "base": "Warrior",
+    "icon": "c_warrior_doppelsoeldner",
+    "max_circle": 3,
+    "skills": ["Doppelsoeldner_Punish", "Doppelsoeldner_DeedsOfValor", "Doppelsoeldner_Mordschlag", "Doppelsoeldner_Double_pay_earn", "Doppelsoeldner_Cyclone", "Doppelsoeldner_Zornhau", "Doppelsoeldner_Zucken", "Doppelsoeldner_Redel"]
+  },
+  "Char1_10": {
+    "name": "Rodelero",
+    "base": "Warrior",
+    "icon": "c_warrior_rodelero",
+    "max_circle": 3,
+    "skills": ["Rodelero_ShieldCharge", "Rodelero_Montano", "Rodelero_TargeSmash", "Rodelero_ShieldPush", "Rodelero_ShieldShoving", "Rodelero_ShieldBash", "Rodelero_Slithering", "Rodelero_ShootingStar", "Rodelero_HighKick"]
+  },
+  "Char1_11": {
+    "name": "Squire",
+    "base": "Warrior",
+    "icon": "c_warrior_squire",
+    "max_circle": 3,
+    "skills": ["Squire_Arrest", "Squire_Repair", "Squire_WeaponTouchUp", "Squire_ArmorTouchUp", "Squire_Camp", "Squire_FoodTable", "Squire_MitigatePenalty"]
+  },
+  "Char1_12": {
+    "name": "Murmillo",
+    "base": "Warrior",
+    "icon": "c_warrior_squire",
+    "max_circle": 3,
+    "skills": ["Murmillo_ChangeStance", "Murmillo_skill_1"]
+  },
+  "Char1_13": {
+    "name": "Shinobi",
+    "base": "Warrior",
+    "icon": "c_warrior_shinobi",
+    "max_circle": 1,
+    "skills": ["Shinobi_Kunai", "Shinobi_Bunshin_no_jutsu", "Shinobi_Mokuton_no_jutsu", "Shinobi_Katon_no_jutsu", "Shinobi_Mijin_no_jutsu"]
+  },
+  "Char1_14": {
+    "name": "Fencer",
+    "base": "Warrior",
+    "icon": "c_warrior_fencer",
+    "max_circle": 3,
+    "skills": ["Fencer_Lunge", "Fencer_SeptEtoiles", "Fencer_AttaqueCoquille", "Fencer_EsquiveToucher", "Fencer_Flanconnade", "Fencer_AttaqueComposee", "Fencer_Preparation"]
+  },
+  "Char1_15": {
+    "name": "Dragoon",
+    "base": "Warrior",
+    "icon": "c_warrior_dragoon",
+    "max_circle": 3,
+    "skills": ["Dragoon_Dragontooth", "Dragoon_Serpentine", "Dragoon_Gae_Bulg", "Dragoon_Dragon_Soar"]
+  },
+  "Char1_16": {
+    "name": "Templar",
+    "base": "Warrior",
+    "icon": "c_warrior_templar",
+    "max_circle": 3,
+    "skills": ["Templer_SummonGuildMember", "Templer_WarpToGuildMember", "Templer_BuildGuildTower", "Templer_ReduceCraftTime", "Templer_BattleOrders"]
+  },
+  "Char2_1": {
+    "name": "Wizard",
+    "base": "Wizard",
+    "icon": "c_wizard_wizard",
+    "max_circle": 3,
+    "skills": ["Wizard_EnergyBolt", "Wizard_Lethargy", "Wizard_Sleep", "Wizard_ReflectShield", "Wizard_EarthQuake", "Wizard_Surespell", "Wizard_MagicMissile", "Wizard_QuickCast"]
+  },
+  "Char2_2": {
+    "name": "Pyromancer",
+    "base": "Wizard",
+    "icon": "c_wizard_pyromancer",
+    "max_circle": 3,
+    "skills": ["Pyromancer_FireBall", "Pyromancer_FireWall", "Pyromancer_EnchantFire", "Pyromancer_Flare", "Pyromancer_FlameGround", "Pyromancer_FirePillar", "Pyromancer_HellBreath"]
+  },
+  "Char2_3": {
+    "name": "Cryomancer",
+    "base": "Wizard",
+    "icon": "c_wizard_cryomancer",
+    "max_circle": 3,
+    "skills": ["Cryomancer_IceBolt", "Cryomancer_IciclePike", "Cryomancer_IceWall", "Cryomancer_IceBlast", "Cryomancer_SubzeroShield", "Cryomancer_Gust", "Cryomancer_SnowRolling", "Cryomancer_FrostPillar"]
+  },
+  "Char2_4": {
+    "name": "Psychokino",
+    "base": "Wizard",
+    "icon": "c_wizard_psychokino",
+    "max_circle": 3,
+    "skills": ["Psychokino_PsychicPressure", "Psychokino_Telekinesis", "Psychokino_Swap", "Psychokino_Teleportation", "Psychokino_MagneticForce", "Psychokino_Raise", "Psychokino_GravityPole"]
+  },
+  "Char2_5": {
+    "name": "Alchemist",
+    "base": "Wizard",
+    "icon": "c_wizard_alchemist",
+    "max_circle": 3,
+    "skills": ["Alchemist_Combustion", "Alchemist_Dig", "Alchemist_ItemAwakening", "Alchemist_Briquetting", "Alchemist_Tincturing", "Alchemist_MagnumOpus", "Alchemist_Roasting"]
+  },
+  "Char2_6": {
+    "name": "Sorcerer",
+    "base": "Wizard",
+    "icon": "c_wizard_sorcerer",
+    "max_circle": 3,
+    "skills": ["Sorcerer_Summoning", "Sorcerer_SummonFamiliar", "Sorcerer_SummonSalamion", "Sorcerer_SummonServant", "Sorcerer_AttackGround", "Sorcerer_Obey", "Sorcerer_Morph", "Sorcerer_Hold", "Sorcerer_Evocation", "Sorcerer_Desmodus"]
+  },
+  "Char2_7": {
+    "name": "Linker",
+    "base": "Wizard",
+    "icon": "c_wizard_linker",
+    "max_circle": 3,
+    "skills": ["Linker_Unbind", "Linker_Physicallink", "Linker_JointPenalty", "Linker_HangmansKnot", "Linker_SpiritualChain", "Linker_UmbilicalCord"]
+  },
+  "Char2_8": {
+    "name": "Chronomancer",
+    "base": "Wizard",
+    "icon": "c_wizard_chronomancer",
+    "max_circle": 3,
+    "skills": ["Chronomancer_Quicken", "Chronomancer_Samsara", "Chronomancer_Stop", "Chronomancer_Slow", "Chronomancer_Haste", "Chronomancer_BackMasking", "Chronomancer_Pass"]
+  },
+  "Char2_9": {
+    "name": "Necromancer",
+    "base": "Wizard",
+    "icon": "c_wizard_necromancer",
+    "max_circle": 3,
+    "skills": ["Necromancer_GatherCorpse", "Necromancer_CreateShoggoth", "Necromancer_FleshCannon", "Necromancer_FleshHoop", "Necromancer_DirtyPole", "Necromancer_Disinter", "Necromancer_CorpseTower", "Necromancer_RaiseDead"]
+  },
+  "Char2_10": {
+    "name": "Thaumaturge",
+    "base": "Wizard",
+    "icon": "c_wizard_thaumaturge",
+    "max_circle": 3,
+    "skills": ["Thaumaturge_SwellLeftArm", "Thaumaturge_ShrinkBody", "Thaumaturge_SwellBody", "Thaumaturge_Transpose", "Thaumaturge_Reversi", "Thaumaturge_SwellRightArm", "Thaumaturge_SwellBrain"]
+  },
+  "Char2_11": {
+    "name": "Elementalist",
+    "base": "Wizard",
+    "icon": "c_wizard_elementalist",
+    "max_circle": 3,
+    "skills": ["Elementalist_Electrocute", "Elementalist_StoneCurse", "Elementalist_Hail", "Elementalist_Prominence", "Elementalist_Meteor", "Elementalist_FreezingSphere", "Elementalist_Rain", "Elementalist_FrostCloud"]
+  },
+  "Char2_12": {
+    "name": "Mimic",
+    "base": "Wizard",
+    "icon": "c_wizard_thaumaturge",
+    "max_circle": 3,
+    "skills": []
+  },
+  "Char2_13": {
+    "name": "Taoist Priest",
+    "base": "Wizard",
+    "icon": "c_wizard_thaumaturge",
+    "max_circle": 3,
+    "skills": []
+  },
+  "Char2_14": {
+    "name": "Sage",
+    "base": "Wizard",
+    "icon": "c_wizard_thaumaturge",
+    "max_circle": 3,
+    "skills": []
+  },
+  "Char2_15": {
+    "name": "Warlock",
+    "base": "Wizard",
+    "icon": "c_wizard_warlock",
+    "max_circle": 3,
+    "skills": ["Warlock_PoleofAgony", "Warlock_Invocation", "Warlock_DarkTheurge", "Warlock_Mastema", "Warlock_EvilSacrifice"]
+  },
+  "Char2_16": {
+    "name": "Featherfoot",
+    "base": "Wizard",
+    "icon": "c_wizard_featherfoot",
+    "max_circle": 3,
+    "skills": ["Featherfoot_BloodBath", "Featherfoot_BloodSucking", "Featherfoot_BonePointing", "Featherfoot_Ngadhundi", "Featherfoot_Kurdaitcha"]
+  },
+  "Char2_17": {
+    "name": "Rune Caster",
+    "base": "Wizard",
+    "icon": "c_wizard_runecaster",
+    "max_circle": 1,
+    "skills": ["RuneCaster_Hagalaz", "RuneCaster_Isa", "RuneCaster_Thurisaz", "RuneCaster_Tiwaz", "RuneCaster_Algiz"]
+  },
+  "Char3_1": {
+    "name": "Archer",
+    "base": "Archer",
+    "icon": "c_archer_archer",
+    "max_circle": 3,
+    "skills": ["Archer_SwiftStep", "Archer_Multishot", "Archer_Fulldraw", "Archer_ObliqueShot", "Archer_Kneelingshot", "Archer_HeavyShot", "Archer_TwinArrows"]
+  },
+  "Char3_2": {
+    "name": "Hunter",
+    "base": "Archer",
+    "icon": "c_archer_hunter",
+    "max_circle": 3,
+    "skills": ["Hunter_Coursing", "Hunter_Snatching", "Hunter_Praise", "Hunter_Pointing", "Hunter_RushDog", "Hunter_Retrieve", "Hunter_Hounding", "Hunter_Growling"]
+  },
+  "Char3_3": {
+    "name": "Quarrel Shooter",
+    "base": "Archer",
+    "icon": "c_archer_quarrelshooter",
+    "max_circle": 3,
+    "skills": ["QuarrelShooter_DeployPavise", "QuarrelShooter_ScatterCaltrop", "QuarrelShooter_StonePicking", "QuarrelShooter_StoneShot", "QuarrelShooter_RapidFire", "QuarrelShooter_Teardown", "QuarrelShooter_RunningShot"]
+  },
+  "Char3_4": {
+    "name": "Ranger",
+    "base": "Archer",
+    "icon": "c_archer_ranger",
+    "max_circle": 3,
+    "skills": ["Ranger_Barrage", "Ranger_HighAnchoring", "Ranger_CriticalShot", "Ranger_SteadyAim", "Ranger_TimeBombArrow", "Ranger_BounceShot", "Ranger_SpiralArrow"]
+  },
+  "Char3_5": {
+    "name": "Sapper",
+    "base": "Archer",
+    "icon": "c_archer_sapper",
+    "max_circle": 3,
+    "skills": ["Sapper_StakeStockades", "Sapper_Cover", "Sapper_Claymore", "Sapper_PunjiStake", "Sapper_DetonateTraps", "Sapper_BroomTrap", "Sapper_CollarBomb", "Sapper_SpikeShooter"]
+  },
+  "Char3_6": {
+    "name": "Wugushi",
+    "base": "Archer",
+    "icon": "c_archer_wugushi",
+    "max_circle": 3,
+    "skills": ["Wugushi_Detoxify", "Wugushi_NeedleBlow", "Wugushi_Bewitch", "Wugushi_WugongGu", "Wugushi_Zhendu", "Wugushi_ThrowGuPot", "Wugushi_JincanGu"]
+  },
+  "Char3_7": {
+    "name": "Hackapell",
+    "base": "Archer",
+    "icon": "c_archer_hackapell",
+    "max_circle": 3,
+    "skills": ["Archer_SaberAries", "Archer_SaberBash", "Archer_CavalryCharge", "Archer_HorseTackle"]
+  },
+  "Char3_8": {
+    "name": "Scout",
+    "base": "Archer",
+    "icon": "c_archer_scout",
+    "max_circle": 3,
+    "skills": ["Scout_Camouflage", "Scout_FluFlu", "Scout_FlareShot", "Scout_Cloaking", "Scout_Undistance", "Scout_Scan", "Scout_SplitArrow"]
+  },
+  "Char3_9": {
+    "name": "Rogue",
+    "base": "Archer",
+    "icon": "c_archer_rogue",
+    "max_circle": 3,
+    "skills": ["Rogue_SneakHit", "Rogue_Feint", "Rogue_Spoliation", "Rogue_Vendetta", "Rogue_Evasion", "Rogue_Lachrymator", "Rogue_Backstab", "Rogue_Burrow"]
+  },
+  "Char3_10": {
+    "name": "Schwarzer Reiter",
+    "base": "Archer",
+    "icon": "c_archer_schwarzereiter",
+    "max_circle": 3,
+    "skills": ["Schwarzereiter_ConcentratedFire", "Schwarzereiter_Caracole", "Schwarzereiter_Limacon", "Schwarzereiter_RetreatShot", "Schwarzereiter_WildShot"]
+  },
+  "Char3_11": {
+    "name": "Fletcher",
+    "base": "Archer",
+    "icon": "c_archer_fletcher",
+    "max_circle": 3,
+    "skills": ["Fletcher_BroadHead", "Fletcher_BodkinPoint", "Fletcher_BarbedArrow", "Fletcher_CrossFire", "Fletcher_MagicArrow", "Fletcher_Singijeon"]
+  },
+  "Char3_12": {
+    "name": "Pied Piper",
+    "base": "Archer",
+    "icon": "c_archer_fletcher",
+    "max_circle": 3,
+    "skills": []
+  },
+  "Char3_13": {
+    "name": "Appraiser",
+    "base": "Archer",
+    "icon": "c_archer_fletcher",
+    "max_circle": 3,
+    "skills": []
+  },
+  "Char3_14": {
+    "name": "Falconer",
+    "base": "Archer",
+    "icon": "c_archer_falconer",
+    "max_circle": 3,
+    "skills": ["Falconer_Calling", "Falconer_BuildRoost", "Falconer_Circling", "Falconer_Hovering", "Falconer_Pheasant", "Falconer_HangingShot", "Falconer_BlisteringThrash"]
+  },
+  "Char3_15": {
+    "name": "Cannoneer",
+    "base": "Archer",
+    "icon": "c_archer_cannoneer",
+    "max_circle": 3,
+    "skills": ["Cannoneer_CannonShot", "Cannoneer_ShootDown", "Cannoneer_SiegeBurst", "Cannoneer_CannonBlast"]
+  },
+  "Char3_16": {
+    "name": "Musketeer",
+    "base": "Archer",
+    "icon": "c_archer_musketeer",
+    "max_circle": 3,
+    "skills": ["Musketeer_CoveringFire", "Musketeer_HeadShot", "Musketeer_Snipe", "Musketeer_PenetrationShot", "Musketeer_ButtStroke", "Musketeer_BayonetThrust"]
+  },
+  "Char4_1": {
+    "name": "Cleric",
+    "base": "Cleric",
+    "icon": "c_cleric_cleric",
+    "max_circle": 3,
+    "skills": ["Cleric_Heal", "Cleric_Cure", "Cleric_SafetyZone", "Cleric_DeprotectedZone", "Cleric_DivineMight", "Cleric_Fade", "Cleric_PatronSaint"]
+  },
+  "Char4_2": {
+    "name": "Priest",
+    "base": "Cleric",
+    "icon": "c_cleric_priest",
+    "max_circle": 3,
+    "skills": ["Priest_Aspersion", "Priest_Monstrance", "Priest_Blessing", "Priest_Resurrection", "Priest_Sacrament", "Priest_Revive", "Priest_MassHeal", "Priest_Exorcise", "Priest_StoneSkin"]
+  },
+  "Char4_3": {
+    "name": "Krivis",
+    "base": "Cleric",
+    "icon": "c_cleric_kriwi",
+    "max_circle": 3,
+    "skills": ["Kriwi_Aukuras", "Kriwi_Zalciai", "Kriwi_Daino", "Kriwi_Zaibas", "Kriwi_DivineStigma", "Kriwi_Melstis"]
+  },
+  "Char4_4": {
+    "name": "Bokor",
+    "base": "Cleric",
+    "icon": "c_cleric_bokor",
+    "max_circle": 3,
+    "skills": ["Bokor_Hexing", "Bokor_Effigy", "Bokor_Tetmamakla", "Bokor_Zombify", "Bokor_Mackangdal", "Bokor_BwaKayiman", "Bokor_Samdiveve", "Bokor_Ogouveve", "Bokor_Damballa"]
+  },
+  "Char4_5": {
+    "name": "Druid",
+    "base": "Cleric",
+    "icon": "c_cleric_druid",
+    "max_circle": 3,
+    "skills": ["Druid_Carnivory", "Druid_Chortasmata", "Druid_ShapeShifting", "Druid_Telepath", "Druid_StereaTrofh", "Druid_Transform"]
+  },
+  "Char4_6": {
+    "name": "Sadhu",
+    "base": "Cleric",
+    "icon": "c_cleric_sadhu",
+    "max_circle": 3,
+    "skills": ["Sadhu_OutofBody", "Sadhu_Prakriti", "Sadhu_AstralBodyExplosion", "Sadhu_VashitaSiddhi", "Sadhu_Possession", "Sadhu_TransmitPrana"]
+  },
+  "Char4_7": {
+    "name": "Dievdirby",
+    "base": "Cleric",
+    "icon": "c_cleric_dievdirbys",
+    "max_circle": 3,
+    "skills": ["Dievdirbys_CarveVakarine", "Dievdirbys_CarveZemina", "Dievdirbys_CarveLaima", "Dievdirbys_Carve", "Dievdirbys_CarveOwl", "Dievdirbys_CarveAustrasKoks", "Dievdirbys_CarveAusirine"]
+  },
+  "Char4_8": {
+    "name": "Oracle",
+    "base": "Cleric",
+    "icon": "c_cleric_oracle",
+    "max_circle": 3,
+    "skills": ["Oracle_ArcaneEnergy", "Oracle_Change", "Oracle_Clairvoyance", "Oracle_CounterSpell", "Oracle_Forecast", "Oracle_Ressetting", "Oracle_Prophecy", "Oracle_DeathVerdict"]
+  },
+  "Char4_9": {
+    "name": "Monk",
+    "base": "Cleric",
+    "icon": "c_cleric_monk",
+    "max_circle": 3,
+    "skills": ["Monk_IronSkin", "Monk_DoublePunch", "Monk_PalmStrike", "Monk_HandKnife", "Monk_EnergyBlast", "Monk_1InchPunch", "Monk_God_Finger_Flicking", "Monk_Golden_Bell_Shield"]
+  },
+  "Char4_10": {
+    "name": "Pardoner",
+    "base": "Cleric",
+    "icon": "c_cleric_pardoner",
+    "max_circle": 3,
+    "skills": ["Pardoner_Simony", "Pardoner_Indulgentia", "Pardoner_DiscernEvil", "Pardoner_IncreaseMagicDEF", "Pardoner_Oblation", "Pardoner_SpellShop", "Pardoner_Dekatos"]
+  },
+  "Char4_11": {
+    "name": "Paladin",
+    "base": "Cleric",
+    "icon": "c_cleric_paladin",
+    "max_circle": 3,
+    "skills": ["Paladin_Smite", "Paladin_Restoration", "Paladin_ResistElements", "Paladin_TurnUndead", "Paladin_Conversion", "Paladin_Barrier", "Paladin_Conviction"]
+  },
+  "Char4_12": {
+    "name": "Chaplain",
+    "base": "Cleric",
+    "icon": "c_cleric_chaplain",
+    "max_circle": 1,
+    "skills": ["Chaplain_LastRites", "Chaplain_BuildCappella", "Chaplain_MagnusExorcismus", "Chaplain_Aspergillum"]
+  },
+  "Char4_13": {
+    "name": "Shepherd",
+    "base": "Cleric",
+    "icon": "c_cleric_paladin",
+    "max_circle": 3,
+    "skills": []
+  },
+  "Char4_14": {
+    "name": "Plague Doctor",
+    "base": "Cleric",
+    "icon": "c_cleric_plaguedoctor",
+    "max_circle": 3,
+    "skills": ["PlagueDoctor_HealingFactor", "PlagueDoctor_Incineration", "PlagueDoctor_Bloodletting", "PlagueDoctor_Fumigate", "PlagueDoctor_Pandemic", "PlagueDoctor_BeakMask"]
+  },
+  "Char4_15": {
+    "name": "Kabbalist",
+    "base": "Cleric",
+    "icon": "c_cleric_kabbalist",
+    "max_circle": 3,
+    "skills": ["Kabbalist_RevengedSevenfold", "Kabbalist_Ayin_sof", "Kabbalist_Merkabah", "Kabbalist_Gematria", "Kabbalist_Notarikon", "Kabbalist_Reduce_Level"]
+  },
+  "": {
+    "name": "GM",
+    "base": "Cleric",
+    "icon": "c_cleric_cleric",
+    "max_circle": 3,
+    "skills": ["GM_RegenerateBuff", "GM_StatBuff", "GM_CooldownBuff", "GM_ATKBuff", "GM_DEFBuff"]
+  }
+};
+
+var classCircleList = {
+  "Char1_1": 0,
+  "Char1_2": 0,
+  "Char1_3": 0,
+  "Char1_4": 0,
+  "Char1_5": 0,
+  "Char1_6": 0,
+  "Char1_7": 0,
+  "Char1_8": 0,
+  "Char1_9": 0,
+  "Char1_10": 0,
+  "Char1_11": 0,
+  "Char1_12": 0,
+  "Char1_13": 0,
+  "Char1_14": 0,
+  "Char1_15": 0,
+  "Char1_16": 0,
+  "Char2_1": 0,
+  "Char2_2": 0,
+  "Char2_3": 0,
+  "Char2_4": 0,
+  "Char2_5": 0,
+  "Char2_6": 0,
+  "Char2_7": 0,
+  "Char2_8": 0,
+  "Char2_9": 0,
+  "Char2_10": 0,
+  "Char2_11": 0,
+  "Char2_12": 0,
+  "Char2_13": 0,
+  "Char2_14": 0,
+  "Char2_15": 0,
+  "Char2_16": 0,
+  "Char2_17": 0,
+  "Char3_1": 0,
+  "Char3_2": 0,
+  "Char3_3": 0,
+  "Char3_4": 0,
+  "Char3_5": 0,
+  "Char3_6": 0,
+  "Char3_7": 0,
+  "Char3_8": 0,
+  "Char3_9": 0,
+  "Char3_10": 0,
+  "Char3_11": 0,
+  "Char3_12": 0,
+  "Char3_13": 0,
+  "Char3_14": 0,
+  "Char3_15": 0,
+  "Char3_16": 0,
+  "Char4_1": 0,
+  "Char4_2": 0,
+  "Char4_3": 0,
+  "Char4_4": 0,
+  "Char4_5": 0,
+  "Char4_6": 0,
+  "Char4_7": 0,
+  "Char4_8": 0,
+  "Char4_9": 0,
+  "Char4_10": 0,
+  "Char4_11": 0,
+  "Char4_12": 0,
+  "Char4_13": 0,
+  "Char4_14": 0,
+  "Char4_15": 0,
+  "": 0
+}

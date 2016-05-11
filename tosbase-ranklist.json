@@ -1,0 +1,44 @@
+{
+  "Rank1": {
+    "Warrior": ["Char1_1"],
+    "Wizard": ["Char2_1"],
+    "Archer": ["Char3_1"],
+    "Cleric": ["Char4_1"]
+  },
+  "Rank2": {
+    "Warrior": ["Char1_2", "Char1_3"],
+    "Wizard": ["Char2_2", "Char2_3"],
+    "Archer": ["Char3_3", "Char3_4"],
+    "Cleric": ["Char4_2", "Char4_3"]
+  },
+  "Rank3": {
+    "Warrior": ["Char1_4", "Char1_6"],
+    "Wizard": ["Char2_4", "Char2_7"],
+    "Archer": ["Char3_2", "Char3_5"],
+    "Cleric": ["Char4_4", "Char4_7"]
+  },
+  "Rank4": {
+    "Warrior": ["Char1_7", "Char1_10"],
+    "Wizard": ["Char2_10", "Char2_11"],
+    "Archer": ["Char3_6", "Char3_8"],
+    "Cleric": ["Char4_6", "Char4_11"]
+  },
+  "Rank5": {
+    "Warrior": ["Char1_11", "Char1_8"],
+    "Wizard": ["Char2_6", "Char2_8"],
+    "Archer": ["Char3_9", "Char3_11"],
+    "Cleric": ["Char4_9", "Char4_10", "Char4_12"]
+  },
+  "Rank6": {
+    "Warrior": ["Char1_9", "Char1_14"],
+    "Wizard": ["Char2_9", "Char2_5", "Char2_17"],
+    "Archer": ["Char3_14", "Char3_10"],
+    "Cleric": ["Char4_5", "Char4_8"]
+  },
+  "Rank7": {
+    "Warrior": ["Char1_15", "Char1_16", "Char1_13"],
+    "Wizard": ["Char2_15", "Char2_16"],
+    "Archer": ["Char3_15", "Char3_16"],
+    "Cleric": ["Char4_14", "Char4_15"]
+  }
+}

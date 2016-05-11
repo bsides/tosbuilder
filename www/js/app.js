@@ -41,63 +41,82 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
 
       // Each tab has its own nav history stack:
 
-      .state('tab.dash', {
-        url: '/dash',
+      // .state('tab.dash', {
+      //   url: '/dash',
+      //   views: {
+      //     'tab-dash': {
+      //       templateUrl: 'templates/tab-dash.html',
+      //       controller: 'DashCtrl'
+      //     }
+      //   }
+      // })
+
+      // .state('tab.chats', {
+      //   url: '/chats',
+      //   views: {
+      //     'tab-chats': {
+      //       templateUrl: 'templates/tab-chats.html',
+      //       controller: 'ChatsCtrl'
+      //     }
+      //   }
+      // })
+      // .state('tab.chat-detail', {
+      //   url: '/chats/:chatId',
+      //   views: {
+      //     'tab-chats': {
+      //       templateUrl: 'templates/chat-detail.html',
+      //       controller: 'ChatDetailCtrl'
+      //     }
+      //   }
+      // })
+
+      .state('tab.build', {
+        url: '/build',
         views: {
-          'tab-dash': {
-            templateUrl: 'templates/tab-dash.html',
-            controller: 'DashCtrl'
+          'tab-build': {
+            resolve: {
+              // Jobs: "Jobs",
+              // logStateParams: function ($stateParams) {
+              //   console.log($stateParams);
+              // }
+            },
+            templateUrl: 'templates/build.html',
+            controller: 'BuildCtrl'
           }
         }
       })
 
-      .state('tab.chats', {
-        url: '/chats',
+      .state('tab.build-skills', {
+        url: '/build/skills?rank&job&circle',
         views: {
-          'tab-chats': {
-            templateUrl: 'templates/tab-chats.html',
-            controller: 'ChatsCtrl'
-          }
-        }
-      })
-      .state('tab.chat-detail', {
-        url: '/chats/:chatId',
-        views: {
-          'tab-chats': {
-            templateUrl: 'templates/chat-detail.html',
-            controller: 'ChatDetailCtrl'
+          'tab-build': {
+            resolve: {
+              // Add here the services which will be used to the skills
+              // Would be nice if the data would already come in the format
+              // that is needed by this view, like filtered by rank and circle
+            },
+            templateUrl: 'templates/skills.html',
+            controller: 'SkillsCtrl'
           }
         }
       })
 
-      .state('tab.rank1', {
-        url: '/new',
-        views: {
-          'tab-new': {
-            templateUrl: 'templates/tab-new.html',
-            controller: 'JobsCtrl'
-          }
-        }
-      })
-
-      .state('tab.account', {
-        url: '/account',
-        views: {
-          'tab-account': {
-            templateUrl: 'templates/tab-account.html',
-            controller: 'AccountCtrl'
-          }
-        }
-      });
+      // .state('tab.account', {
+      //   url: '/account',
+      //   views: {
+      //     'tab-account': {
+      //       templateUrl: 'templates/tab-account.html',
+      //       controller: 'AccountCtrl'
+      //     }
+      //   }
+      // });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/dash');
+    $urlRouterProvider.otherwise('/tab/build');
 
   })
 
-  .constant('CONFIG', {
-    FIREBASE_URL: 'https://tosbuilder.firebaseio.com/Jobs'
-  })
+  .constant('FBURL', 'https://tosbuilder.firebaseio.com/Jobs')
 
   .filter('rank1', function () {
     return function (job) {

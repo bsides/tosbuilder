@@ -1,0 +1,335 @@
+.jicons {
+    background-image: url(../img/jicons.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.jicons-archer-archer {
+    width: 100px;
+    height: 100px;
+    background-position: -3px -3px;
+}
+
+.jicons-archer-cannoneer {
+    width: 100px;
+    height: 100px;
+    background-position: -109px -3px;
+}
+
+.jicons-archer-falconer {
+    width: 100px;
+    height: 100px;
+    background-position: -215px -3px;
+}
+
+.jicons-archer-fletcher {
+    width: 100px;
+    height: 100px;
+    background-position: -321px -3px;
+}
+
+.jicons-archer-hunter {
+    width: 100px;
+    height: 100px;
+    background-position: -427px -3px;
+}
+
+.jicons-archer-musketeer {
+    width: 100px;
+    height: 100px;
+    background-position: -533px -3px;
+}
+
+.jicons-archer-quarrelshooter {
+    width: 100px;
+    height: 100px;
+    background-position: -639px -3px;
+}
+
+.jicons-archer-ranger {
+    width: 100px;
+    height: 100px;
+    background-position: -3px -109px;
+}
+
+.jicons-archer-rogue {
+    width: 100px;
+    height: 100px;
+    background-position: -109px -109px;
+}
+
+.jicons-archer-sapper {
+    width: 100px;
+    height: 100px;
+    background-position: -215px -109px;
+}
+
+.jicons-archer-schwarzereiter {
+    width: 100px;
+    height: 100px;
+    background-position: -321px -109px;
+}
+
+.jicons-archer-scout {
+    width: 100px;
+    height: 100px;
+    background-position: -427px -109px;
+}
+
+.jicons-archer-wugushi {
+    width: 100px;
+    height: 100px;
+    background-position: -533px -109px;
+}
+
+.jicons-cleric-bokor {
+    width: 100px;
+    height: 100px;
+    background-position: -639px -109px;
+}
+
+.jicons-cleric-chaplain {
+    width: 100px;
+    height: 100px;
+    background-position: -3px -215px;
+}
+
+.jicons-cleric-cleric {
+    width: 100px;
+    height: 100px;
+    background-position: -109px -215px;
+}
+
+.jicons-cleric-dievdirbys {
+    width: 100px;
+    height: 100px;
+    background-position: -215px -215px;
+}
+
+.jicons-cleric-druid {
+    width: 100px;
+    height: 100px;
+    background-position: -321px -215px;
+}
+
+.jicons-cleric-kabbalist {
+    width: 100px;
+    height: 100px;
+    background-position: -427px -215px;
+}
+
+.jicons-cleric-krivis {
+    width: 100px;
+    height: 100px;
+    background-position: -533px -215px;
+}
+
+.jicons-cleric-monk {
+    width: 100px;
+    height: 100px;
+    background-position: -639px -215px;
+}
+
+.jicons-cleric-oracle {
+    width: 100px;
+    height: 100px;
+    background-position: -3px -321px;
+}
+
+.jicons-cleric-paladin {
+    width: 100px;
+    height: 100px;
+    background-position: -109px -321px;
+}
+
+.jicons-cleric-pardoner {
+    width: 100px;
+    height: 100px;
+    background-position: -215px -321px;
+}
+
+.jicons-cleric-plague-doctor {
+    width: 100px;
+    height: 100px;
+    background-position: -321px -321px;
+}
+
+.jicons-cleric-priest {
+    width: 100px;
+    height: 100px;
+    background-position: -427px -321px;
+}
+
+.jicons-cleric-sadhu {
+    width: 100px;
+    height: 100px;
+    background-position: -533px -321px;
+}
+
+.jicons-swordsman-barbarian {
+    width: 100px;
+    height: 100px;
+    background-position: -639px -321px;
+}
+
+.jicons-swordsman-cataphract {
+    width: 100px;
+    height: 100px;
+    background-position: -3px -427px;
+}
+
+.jicons-swordsman-corsair {
+    width: 100px;
+    height: 100px;
+    background-position: -109px -427px;
+}
+
+.jicons-swordsman-doppelsoeldner {
+    width: 100px;
+    height: 100px;
+    background-position: -215px -427px;
+}
+
+.jicons-swordsman-dragoon {
+    width: 100px;
+    height: 100px;
+    background-position: -321px -427px;
+}
+
+.jicons-swordsman-fencer {
+    width: 100px;
+    height: 100px;
+    background-position: -427px -427px;
+}
+
+.jicons-swordsman-highlander {
+    width: 100px;
+    height: 100px;
+    background-position: -533px -427px;
+}
+
+.jicons-swordsman-hoplite {
+    width: 100px;
+    height: 100px;
+    background-position: -639px -427px;
+}
+
+.jicons-swordsman-peltasta {
+    width: 100px;
+    height: 100px;
+    background-position: -3px -533px;
+}
+
+.jicons-swordsman-rodelero {
+    width: 100px;
+    height: 100px;
+    background-position: -109px -533px;
+}
+
+.jicons-swordsman-shinobi {
+    width: 100px;
+    height: 100px;
+    background-position: -215px -533px;
+}
+
+.jicons-swordsman-squire {
+    width: 100px;
+    height: 100px;
+    background-position: -321px -533px;
+}
+
+.jicons-swordsman-swordsman {
+    width: 100px;
+    height: 100px;
+    background-position: -427px -533px;
+}
+
+.jicons-swordsman-templar {
+    width: 100px;
+    height: 100px;
+    background-position: -533px -533px;
+}
+
+.jicons-wizard-alchemist {
+    width: 100px;
+    height: 100px;
+    background-position: -639px -533px;
+}
+
+.jicons-wizard-chronomancer {
+    width: 100px;
+    height: 100px;
+    background-position: -3px -639px;
+}
+
+.jicons-wizard-cryomancer {
+    width: 100px;
+    height: 100px;
+    background-position: -109px -639px;
+}
+
+.jicons-wizard-elementalist {
+    width: 100px;
+    height: 100px;
+    background-position: -215px -639px;
+}
+
+.jicons-wizard-featherfoot {
+    width: 100px;
+    height: 100px;
+    background-position: -321px -639px;
+}
+
+.jicons-wizard-linker {
+    width: 100px;
+    height: 100px;
+    background-position: -427px -639px;
+}
+
+.jicons-wizard-necromancer {
+    width: 100px;
+    height: 100px;
+    background-position: -533px -639px;
+}
+
+.jicons-wizard-psychokino {
+    width: 100px;
+    height: 100px;
+    background-position: -639px -639px;
+}
+
+.jicons-wizard-pyromancer {
+    width: 100px;
+    height: 100px;
+    background-position: -745px -3px;
+}
+
+.jicons-wizard-runecaster {
+    width: 100px;
+    height: 100px;
+    background-position: -745px -109px;
+}
+
+.jicons-wizard-sorcerer {
+    width: 100px;
+    height: 100px;
+    background-position: -745px -215px;
+}
+
+.jicons-wizard-thaumaturge {
+    width: 100px;
+    height: 100px;
+    background-position: -745px -321px;
+}
+
+.jicons-wizard-warlock {
+    width: 100px;
+    height: 100px;
+    background-position: -745px -427px;
+}
+
+.jicons-wizard-wizard {
+    width: 100px;
+    height: 100px;
+    background-position: -745px -533px;
+}

@@ -1,12 +1,26 @@
 angular.module('ToSBuilder.services', [])
 
-  .factory('Jobs', function ($log, $firebaseObject, CONFIG) {
+  .factory('Jobs', function($log, $firebaseObject, FBURL) {
 
-    var jobsRef = new Firebase(CONFIG.FIREBASE_URL);
-    // Returns with angularfire
-    var jobsObject = $firebaseObject(jobsRef);
 
-    return jobsObject;
+    return {
+      all: (function() {
+        var ref = new Firebase(FBURL);
+        var obj = $firebaseObject(ref);
+
+        return obj;
+      } ()),
+      getByName: function(jobName) {
+        // var result = [];
+        var ref = new Firebase(FBURL + '/' + jobName);
+        var obj = $firebaseObject(ref);
+
+        return obj;
+      },
+      getByRank: function(rankLevel) {
+        var ref = new Firebase(FBURL).startAt(rankLevel)
+      }
+    };
 
     // return {
     //   all: function () {
@@ -23,15 +37,44 @@ angular.module('ToSBuilder.services', [])
     // };
   })
 
-  .factory('Utils', function () {
+  .factory('Utils', function($log, Jobs) {
     return {
-      range: function (n) {
+      range: function(n) {
         return new Array(n);
+      },
+      calculateCircle: function(selectedJob) {
+        var circle,
+          canSelect = false,
+          isLastRank = false
+          ;
+
+
+        angular.forEach(Jobs, function(val, key) {
+          if (selectedJob.job === val.name) {
+            var circle = (selectedJob.circle * 1) + 1,
+              databaseCircle = val.circles * 1;
+
+            canSelect = circle < databaseCircle;
+            isLastRank = circle === databaseCircle;
+          }
+        });
+        // $log.log(canSelect);
+        if (isLastRank) return false;
+        if (canSelect) return circle;
+
+
+        // if (parent === null) return 1;
+        // if (parent.job === current.job) {
+        //   circle = parent.circle + 1;
+        // } else {
+        //   circle = 1;
+        // };
+        // return circle;
       }
     };
   })
 
-  .factory('Chats', function () {
+  .factory('Chats', function() {
     // Might use a resource here that returns a JSON array
 
     // Some fake testing data
@@ -63,13 +106,13 @@ angular.module('ToSBuilder.services', [])
       }];
 
     return {
-      all: function () {
+      all: function() {
         return chats;
       },
-      remove: function (chat) {
+      remove: function(chat) {
         chats.splice(chats.indexOf(chat), 1);
       },
-      get: function (chatId) {
+      get: function(chatId) {
         for (var i = 0; i < chats.length; i++) {
           if (chats[i].id === parseInt(chatId)) {
             return chats[i];

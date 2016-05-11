@@ -1,15 +1,7 @@
-<ion-view title="New Build">
+<ion-view title="Skills">
   <ion-content padding="true" class="has-header">
-    <div class="list card">
-      <div class="item item-divider">Rank 1</div>
-      <div class="item item-body">
-        <button ng-repeat="job in jobs | rank1" class="button button-positive button-block">{{ job.name }} <span class="ion-ios-star" ng-repeat="circle in range(job.circles) track by $index"></span></button>
-      </div>
-    </div>
-
-    <div ng-show="isNewBuild">
     <div class="button-bar">
-      <a ui-sref="tabsController.newBuild" id="rank1Swordsman-button12" class="button button-dark  button-block icon-left ion-arrow-left-a">New Build</a>
+      <a ui-sref="tab.build" id="rank1Swordsman-button12" class="button button-dark  button-block icon-left ion-arrow-left-a">New Build</a>
       <a ui-sref="tabsController.rank2Swordsman" id="rank1Swordsman-button11" class="button button-dark  button-block icon-right ion-arrow-right-a">Rank 2</a>
     </div>
     <ion-list>
@@ -68,6 +60,5 @@
       </ion-item>
     </ion-list>
     <button id="rank1Swordsman-button5" class="button button-royal  button-block icon-left ion-android-attach">Add Attributes</button>
-    </div>
   </ion-content>
 </ion-view>
