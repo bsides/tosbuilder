@@ -1,10 +1,37 @@
 <ion-view title="New Build">
   <ion-content padding="true" class="has-header">
     <div class="list card">
-      <div class="item item-divider">Rank 1</div>
-      <div class="item item-body">
-        <button ng-repeat="job in jobs | rank1" class="button button-positive button-block" ui-sref="tab.build-skills({ rank: 1, job: job.name, circle: 1 })">{{ job.name }} <span class="ion-ios-star"></span><!--<span class="ion-ios-star" ng-repeat="circle in range(job.circles) track by $index"></span>--></button>
+      <div class="item item-divider">Rank {{ rankToSelect }}</div>
+
+
+      <div ng-repeat="anything in jobs">
+      <div ng-if="$even" class="row">
+        <div class="col col-50" ng-repeat="job in jobs[$index]">
+
+          <div class="col col-50">
+
+
+          </div>
+
+        <!--
+        <a class="item item-thumbnail-left">
+          <img class="jicons jicons-{{ job.name | spaceless }}">
+          <h2>{{ job.name }} <span class="ion-ios-star"></span></h2>
+        </a>
+        -->
+        <button class="button button-block" ui-sref="tab.build-skills({ rank: 1, name: job.name, circle: 1 })" ng-repeat="job in jobs">
+          <i class="jicons jicons-{{ job.name | spaceless }}"></i>
+          {{ job.name }}
+          <div class="ion-ios-star"></div>
+        </button>
+        <!--<button ng-repeat="job in jobs | rank1" class="button button-positive button-block" ui-sref="tab.build-skills({ rank: 1, job: job.name, circle: 1 })">{{ job.name }} <span class="ion-ios-star"></span></button>-->
+        <!--<span class="ion-ios-star" ng-repeat="circle in range(job.circles) track by $index"></span>-->
+
+        </div>
+        </div>
       </div>
+
+
     </div>
   </ion-content>
 </ion-view>

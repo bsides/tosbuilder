@@ -10,6 +10,7 @@
     "1": 1,
     "14": 1,
     "28": 1,
+    "41": 1,
     "41": 1
   },
   "JobsByIndex": {
@@ -51,7 +52,7 @@
     },
     "7": {
       "index": 7,
-      "name": "Wuguchi",
+      "name": "Wugushi",
       "rank": 4,
       "circles": 3
     },
@@ -81,7 +82,7 @@
     },
     "12": {
       "index": 12,
-      "name": "Canoneer",
+      "name": "Cannoneer",
       "rank": 7,
       "circles": 1
     },
@@ -117,7 +118,7 @@
     },
     "18": {
       "index": 18,
-      "name": "Dievdirby",
+      "name": "Dievdirbys",
       "rank": 3,
       "circles": 3
     },
@@ -165,7 +166,7 @@
     },
     "26": {
       "index": 26,
-      "name": "Kabalist",
+      "name": "Kabbalist",
       "rank": 7,
       "circles": 1
     },
@@ -225,7 +226,7 @@
     },
     "36": {
       "index": 36,
-      "name": "Doppelsoedner",
+      "name": "Doppelsoeldner",
       "rank": 6,
       "circles": 2
     },
@@ -279,7 +280,7 @@
     },
     "45": {
       "index": 45,
-      "name": "Psichokino",
+      "name": "Psychokino",
       "rank": 3,
       "circles": 3
     },
@@ -375,9 +376,9 @@
       "rank": 4,
       "circles": 3
     },
-    "Wuguchi": {
+    "Wugushi": {
       "index": 7,
-      "name": "Wuguchi",
+      "name": "Wugushi",
       "rank": 4,
       "circles": 3
     },
@@ -405,9 +406,9 @@
       "rank": 6,
       "circles": 2
     },
-    "Canoneer": {
+    "Cannoneer": {
       "index": 12,
-      "name": "Canoneer",
+      "name": "Cannoneer",
       "rank": 7,
       "circles": 1
     },
@@ -441,9 +442,9 @@
       "rank": 3,
       "circles": 3
     },
-    "Dievdirby": {
+    "Dievdirbys": {
       "index": 18,
-      "name": "Dievdirby",
+      "name": "Dievdirbys",
       "rank": 3,
       "circles": 3
     },
@@ -489,9 +490,9 @@
       "rank": 6,
       "circles": 2
     },
-    "Kabalist": {
+    "Kabbalist": {
       "index": 26,
-      "name": "Kabalist",
+      "name": "Kabbalist",
       "rank": 7,
       "circles": 1
     },
@@ -549,9 +550,9 @@
       "rank": 5,
       "circles": 3
     },
-    "Doppelsoedner": {
+    "Doppelsoeldner": {
       "index": 36,
-      "name": "Doppelsoedner",
+      "name": "Doppelsoeldner",
       "rank": 6,
       "circles": 2
     },
@@ -603,9 +604,9 @@
       "rank": 3,
       "circles": 3
     },
-    "Psichokino": {
+    "Psychokino": {
       "index": 45,
-      "name": "Psichokino",
+      "name": "Psychokino",
       "rank": 3,
       "circles": 3
     },

@@ -79,10 +79,20 @@ angular.module('ToSBuilder.controllers', [])
 
   })
 
-  .controller('BuildCtrl', function($scope, $log, Utils, Jobs) {
+  .controller('BuildCtrl', function($scope, $log, $stateParams, Utils, Jobs) {
     var data = Jobs.all;
+    var isNewBuild = false;
     $scope.jobs = [];
     $scope.range = Utils.range;
+
+    // Check if this is a new build
+    if (Object.keys($stateParams).length === 0) {
+      isNewBuild = true;
+    };
+    // If it'a a new build, we fill in starter data
+    if (isNewBuild) {
+      $scope.rankToSelect = 1;
+    };
 
     //   rank1 = Jobs.getByName("Archer");
     // rank1.$loaded(function() {
@@ -115,8 +125,11 @@ angular.module('ToSBuilder.controllers', [])
 
 
   .controller('SkillsCtrl', function($log, $scope, $stateParams, Utils) {
-    Utils.calculateCircle($stateParams);
+    //Utils.calculateCircle($stateParams);
     // var job = $stateParams.job;
+
+    $scope.chosenJob = $stateParams;
+    $log.info($stateParams);
 
   })
 

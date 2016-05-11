@@ -9788,3 +9788,283 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.jicons {
+  background-image: url(../img/jicons.png);
+  background-repeat: no-repeat;
+  display: block; }
+
+.jicons-archer {
+  width: 100px;
+  height: 100px;
+  background-position: -3px -3px; }
+
+.jicons-cannoneer {
+  width: 100px;
+  height: 100px;
+  background-position: -109px -3px; }
+
+.jicons-falconer {
+  width: 100px;
+  height: 100px;
+  background-position: -215px -3px; }
+
+.jicons-fletcher {
+  width: 100px;
+  height: 100px;
+  background-position: -321px -3px; }
+
+.jicons-hunter {
+  width: 100px;
+  height: 100px;
+  background-position: -427px -3px; }
+
+.jicons-musketeer {
+  width: 100px;
+  height: 100px;
+  background-position: -533px -3px; }
+
+.jicons-quarrelshooter {
+  width: 100px;
+  height: 100px;
+  background-position: -639px -3px; }
+
+.jicons-ranger {
+  width: 100px;
+  height: 100px;
+  background-position: -3px -109px; }
+
+.jicons-rogue {
+  width: 100px;
+  height: 100px;
+  background-position: -109px -109px; }
+
+.jicons-sapper {
+  width: 100px;
+  height: 100px;
+  background-position: -215px -109px; }
+
+.jicons-schwarzereiter {
+  width: 100px;
+  height: 100px;
+  background-position: -321px -109px; }
+
+.jicons-scout {
+  width: 100px;
+  height: 100px;
+  background-position: -427px -109px; }
+
+.jicons-wugushi {
+  width: 100px;
+  height: 100px;
+  background-position: -533px -109px; }
+
+.jicons-bokor {
+  width: 100px;
+  height: 100px;
+  background-position: -639px -109px; }
+
+.jicons-chaplain {
+  width: 100px;
+  height: 100px;
+  background-position: -3px -215px; }
+
+.jicons-cleric {
+  width: 100px;
+  height: 100px;
+  background-position: -109px -215px; }
+
+.jicons-dievdirbys {
+  width: 100px;
+  height: 100px;
+  background-position: -215px -215px; }
+
+.jicons-druid {
+  width: 100px;
+  height: 100px;
+  background-position: -321px -215px; }
+
+.jicons-kabbalist {
+  width: 100px;
+  height: 100px;
+  background-position: -427px -215px; }
+
+.jicons-krivis {
+  width: 100px;
+  height: 100px;
+  background-position: -533px -215px; }
+
+.jicons-monk {
+  width: 100px;
+  height: 100px;
+  background-position: -639px -215px; }
+
+.jicons-oracle {
+  width: 100px;
+  height: 100px;
+  background-position: -3px -321px; }
+
+.jicons-paladin {
+  width: 100px;
+  height: 100px;
+  background-position: -109px -321px; }
+
+.jicons-pardoner {
+  width: 100px;
+  height: 100px;
+  background-position: -215px -321px; }
+
+.jicons-plaguedoctor {
+  width: 100px;
+  height: 100px;
+  background-position: -321px -321px; }
+
+.jicons-priest {
+  width: 100px;
+  height: 100px;
+  background-position: -427px -321px; }
+
+.jicons-sadhu {
+  width: 100px;
+  height: 100px;
+  background-position: -533px -321px; }
+
+.jicons-barbarian {
+  width: 100px;
+  height: 100px;
+  background-position: -639px -321px; }
+
+.jicons-cataphract {
+  width: 100px;
+  height: 100px;
+  background-position: -3px -427px; }
+
+.jicons-corsair {
+  width: 100px;
+  height: 100px;
+  background-position: -109px -427px; }
+
+.jicons-doppelsoeldner {
+  width: 100px;
+  height: 100px;
+  background-position: -215px -427px; }
+
+.jicons-dragoon {
+  width: 100px;
+  height: 100px;
+  background-position: -321px -427px; }
+
+.jicons-fencer {
+  width: 100px;
+  height: 100px;
+  background-position: -427px -427px; }
+
+.jicons-highlander {
+  width: 100px;
+  height: 100px;
+  background-position: -533px -427px; }
+
+.jicons-hoplite {
+  width: 100px;
+  height: 100px;
+  background-position: -639px -427px; }
+
+.jicons-peltasta {
+  width: 100px;
+  height: 100px;
+  background-position: -3px -533px; }
+
+.jicons-rodelero {
+  width: 100px;
+  height: 100px;
+  background-position: -109px -533px; }
+
+.jicons-shinobi {
+  width: 100px;
+  height: 100px;
+  background-position: -215px -533px; }
+
+.jicons-squire {
+  width: 100px;
+  height: 100px;
+  background-position: -321px -533px; }
+
+.jicons-swordsman {
+  width: 100px;
+  height: 100px;
+  background-position: -427px -533px; }
+
+.jicons-templar {
+  width: 100px;
+  height: 100px;
+  background-position: -533px -533px; }
+
+.jicons-alchemist {
+  width: 100px;
+  height: 100px;
+  background-position: -639px -533px; }
+
+.jicons-chronomancer {
+  width: 100px;
+  height: 100px;
+  background-position: -3px -639px; }
+
+.jicons-cryomancer {
+  width: 100px;
+  height: 100px;
+  background-position: -109px -639px; }
+
+.jicons-elementalist {
+  width: 100px;
+  height: 100px;
+  background-position: -215px -639px; }
+
+.jicons-featherfoot {
+  width: 100px;
+  height: 100px;
+  background-position: -321px -639px; }
+
+.jicons-linker {
+  width: 100px;
+  height: 100px;
+  background-position: -427px -639px; }
+
+.jicons-necromancer {
+  width: 100px;
+  height: 100px;
+  background-position: -533px -639px; }
+
+.jicons-psychokino {
+  width: 100px;
+  height: 100px;
+  background-position: -639px -639px; }
+
+.jicons-pyromancer {
+  width: 100px;
+  height: 100px;
+  background-position: -745px -3px; }
+
+.jicons-runecaster {
+  width: 100px;
+  height: 100px;
+  background-position: -745px -109px; }
+
+.jicons-sorcerer {
+  width: 100px;
+  height: 100px;
+  background-position: -745px -215px; }
+
+.jicons-thaumaturge {
+  width: 100px;
+  height: 100px;
+  background-position: -745px -321px; }
+
+.jicons-warlock {
+  width: 100px;
+  height: 100px;
+  background-position: -745px -427px; }
+
+.jicons-wizard {
+  width: 100px;
+  height: 100px;
+  background-position: -745px -533px; }

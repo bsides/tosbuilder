@@ -87,7 +87,7 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
       })
 
       .state('tab.build-skills', {
-        url: '/build/skills?rank&job&circle',
+        url: '/build/skills?rank&name&circle',
         views: {
           'tab-build': {
             resolve: {
@@ -130,6 +130,13 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
         // };
       };
       return justRank1;
+    };
+  })
+  .filter('spaceless', function() {
+    return function(input) {
+      if (input) {
+        return input.toLowerCase().replace(/\s+/g, '');
+      };
     };
   })
   ;

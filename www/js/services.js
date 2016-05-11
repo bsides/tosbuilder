@@ -49,7 +49,7 @@ angular.module('ToSBuilder.services', [])
           ;
 
 
-        angular.forEach(Jobs, function(val, key) {
+        angular.forEach(Jobs.all, function(val, key) {
           if (selectedJob.job === val.name) {
             var circle = (selectedJob.circle * 1) + 1,
               databaseCircle = val.circles * 1;
