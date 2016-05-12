@@ -1,5 +1,15 @@
 <ion-view title="Rank: {{ chosenJob.rank }} - Skills for {{ chosenJob.name }} ({{ chosenJob.circle }})">
   <ion-content padding="true" class="has-header">
+      <div class="heading">
+        <div class="mid-heading">
+          <h2>{{ header }}</h2>
+          <h3>{{ initialClass }}</h3>
+
+          <div class="skill-points" ng-if="!isNewBuild">
+            Available Skill Points: <span>{{ skillPoints }}</span>
+          </div>
+        </div>
+      </div>
     <ion-list>
       <ion-item class="item-divider">Circle 1</ion-item>
       <ion-item class="item-avatar item-icon-right balanced">
@@ -58,8 +68,10 @@
     <button id="rank1Swordsman-button5" class="button button-royal  button-block icon-left ion-android-attach">Add Attributes</button>
 
   </ion-content>
-      <div class="bar bar-footer">
-        <button ui-sref="tab.build({{ chosenJob }})" class="button button-clear button-dark pull-right">Done, go to Rank {{ chosenJob.rank * 1 + 1 }} <i class="icon-right ion-arrow-right-a"></i></a>
-      </div>
-    </div>
+
+  <ion-footer-bar class="bar tabs">
+    <!--<button ui-sref="tab.build-ranks({ rank: {{ chosenJob.rank * 1 + 1 }}, name: '{{ chosenJob.name }}', circle: {{chosenJob.circle}}, initial: '{{chosenJob.initial}}', classes: {{ classes }} })" class="button button-clear button-dark">Done, go to Rank {{ chosenJob.rank * 1 + 1 }} <i class="icon-right ion-arrow-right-a"></i></button>-->
+    <button class="button button-clear button-dark">Done, go to Rank x <i class="icon-right ion-arrow-right-a"></i></button>
+  </ion-footer-bar>
+
 </ion-view>

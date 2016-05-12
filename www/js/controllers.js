@@ -52,47 +52,209 @@ angular.module('ToSBuilder.controllers', [])
     };
   })
 
-  .controller('JobsCtrl', function($scope, $log, Utils, Jobs) {
-    var jobs = Jobs.all();
-    // $scope.remove = function(job) {
-    //   Jobs.remove(job);
-    // };
+  // .controller('JobsCtrl', function($scope, $log, Utils, Jobs) {
+  //   var jobs = Jobs.all();
+  //   // $scope.remove = function(job) {
+  //   //   Jobs.remove(job);
+  //   // };
 
-    $scope.jobs = [];
+  //   $scope.jobs = [];
 
-    // $scope.jobs = Jobs;
-    // $log.log($scope.jobs);
-    angular.forEach(jobs, function(val, key) {
-      $scope.jobs.push(val);
-      // $log.log(val);
-    });
+  //   // $scope.jobs = Jobs;
+  //   // $log.log($scope.jobs);
+  //   angular.forEach(jobs, function(val, key) {
+  //     $scope.jobs.push(val);
+  //     // $log.log(val);
+  //   });
 
 
 
-    $scope.range = Utils.range;
+  //   $scope.range = Utils.range;
 
-    $scope.canChooseClass = function(current, parent) {
-      var isRankPossible = parent.rank < current.rank ? true : false;
-      var isCirclePossible = current.circles >= 1 && current.circles <= 3;
-      return isRankPossible && isCirclePossible;
-    };
+  //   $scope.canChooseClass = function(current, parent) {
+  //     var isRankPossible = parent.rank < current.rank ? true : false;
+  //     var isCirclePossible = current.circles >= 1 && current.circles <= 3;
+  //     return isRankPossible && isCirclePossible;
+  //   };
 
-  })
+  // })
 
-  .controller('BuildCtrl', function($scope, $log, $stateParams, Utils, Jobs) {
+  .controller('BuildCtrl', function($scope, $log, $firebaseAuth, $firebaseObject, $state, $stateParams, $filter, Utils, Jobs, FBURL) {
+    var isDataLoaded = false;
     var data = Jobs.all;
     var isNewBuild = false;
+    var rank = 0;
+    $scope.jobs = [];
+    $scope.range = Utils.range;
+
+    var fbRef = new Firebase(FBURL);
+    var authObj = $firebaseAuth(fbRef);
+    var authData = authObj.$getAuth();
+
+    var userRef, userObj, keepGoing;
+    if (authData === null) {
+      authObj.$authAnonymously().then(function(authData) {
+        userRef = fbRef.child('Users').child(authData.uid);
+        userObj = $firebaseObject(userRef);
+        keepGoing();
+
+      }).catch(function(error) {
+        $log.error(error);
+      });
+    } else {
+      userRef = fbRef.child('Users').child(authData.uid);
+      userObj = $firebaseObject(userRef);
+      keepGoing();
+    };
+
+    function keepGoing() {
+
+      // Check if this is a new build
+      if (Object.keys($stateParams).length === 0) {
+        isNewBuild = true;
+        $scope.isNewBuild = isNewBuild;
+      };
+      // If it'a a new build, we fill in starter data
+      if (isNewBuild) {
+        $scope.rankToSelect = 1;
+        $scope.initialClass = 'Initial Class';
+        $scope.header = 'Select a Class';
+        rank = 1;
+
+        // userObj.$save().then(function(ref) {
+        //   console.log(ref);
+        // }, function(error) {
+        //   $log.log(error);
+        // });
+      } else {
+        // else we get data from GET and prep others
+        rank = $stateParams.rank;
+      };
+
+      //   rank1 = Jobs.getByName("Archer");
+      // rank1.$loaded(function() {
+      //   $log.log(rank1.rank);
+      // });
+
+      $scope.classSelected = function(jobData) {
+        userObj.justSelected = {};
+        userObj.justSelected = jobData;
+        userObj.justSelected.circle = 1;
+        userObj.$save().then(function() {
+          $state.go('tab.build-skills');
+        }, function(error) {
+          $log.error(error);
+        });
+      };
+
+      data.$loaded(function() {
+        angular.forEach(data, function(val, key) {
+          if (rank === val.rank * 1) {
+            $scope.jobs.push(val);
+          };
+        });
+        $scope.isDataLoaded = true;
+      });
+
+
+    };
+
+
+    // authObj.$authAnonymously().then(function(authData) {
+    //   // $log.log(authData.uid);
+    //   // var userRef = authRef.child('Users').child(authData.uid);
+    //   var userObj = $firebaseObject(userRef);
+    //   $log.log(userObj);
+
+    //   // Check if this is a new build
+    //   if (Object.keys($stateParams).length === 0) {
+    //     isNewBuild = true;
+    //     $scope.isNewBuild = isNewBuild;
+    //   };
+    //   // If it'a a new build, we fill in starter data
+    //   if (isNewBuild) {
+    //     $scope.rankToSelect = 1;
+    //     $scope.initialClass = 'Initial Class';
+    //     $scope.header = 'Select a Class';
+    //     rank = 1;
+
+    //     // userObj.$save().then(function(ref) {
+    //     //   console.log(ref);
+    //     // }, function(error) {
+    //     //   $log.log(error);
+    //     // });
+    //   } else {
+    //     // else we get data from GET and prep others
+    //     rank = $stateParams.rank;
+    //   };
+
+    //   //   rank1 = Jobs.getByName("Archer");
+    //   // rank1.$loaded(function() {
+    //   //   $log.log(rank1.rank);
+    //   // });
+
+    //   data.$loaded(function() {
+    //     angular.forEach(data, function(val, key) {
+    //       if (rank === val.rank * 1) {
+    //         $scope.jobs.push(val);
+    //       };
+    //     });
+    //   });
+
+    //   $scope.classSelected = function(jobData) {
+    //     userObj.rankSelection = {};
+    //     userObj.rankSelection[jobData.rank] = jobData;
+    //     userObj.$save().then(function() {
+    //       $state.go('tab.build-skills');
+    //     }, function(error) {
+    //       $log.error(error);
+    //     });
+    //   };
+
+    // }).catch(function(error) {
+    //   $log.error(error);
+    // });
+
+  })
+  .controller('RanksCtrl', function($scope, $log, $stateParams, $filter, Utils, Jobs) {
+    var data = Jobs.all;
+    var isNewBuild = false;
+    var rank = 0;
     $scope.jobs = [];
     $scope.range = Utils.range;
 
     // Check if this is a new build
     if (Object.keys($stateParams).length === 0) {
       isNewBuild = true;
+      $scope.isNewBuild = isNewBuild;
     };
     // If it'a a new build, we fill in starter data
     if (isNewBuild) {
       $scope.rankToSelect = 1;
+      $scope.header = 'Select a Class';
+      $scope.initialClass = 'Initial Class';
+      rank = 1;
+    } else {
+      // else we get data from GET and prep others
+      rank = $stateParams.rank * 1;
+      $scope.rankToSelect = rank;
+      $scope.header = 'Select a Class';
+      $scope.initialClass = $stateParams.initial;
+      $scope.skillPoints = 15;
+      $scope.classes = $stateParams.classes;
     };
+
+    if (typeof $stateParams.classes !== 'undefined') {
+      data.$loaded(function() {
+        angular.forEach(data, function(val, key) {
+          if (val.name === val.rank * 1) {
+            if ($scope.initialClass === val.initial) {
+              $scope.jobs.push(val);
+            };
+          };
+        });
+      });
+    }
 
     //   rank1 = Jobs.getByName("Archer");
     // rank1.$loaded(function() {
@@ -101,13 +263,38 @@ angular.module('ToSBuilder.controllers', [])
 
     data.$loaded(function() {
       angular.forEach(data, function(val, key) {
-        $scope.jobs.push(val);
+        if (rank === val.rank * 1) {
+          if ($scope.initialClass === val.initial) {
+            $scope.jobs.push(val);
+          };
+        };
       });
     });
 
   })
 
+  .controller('SkillsCtrl', function($log, $scope, $stateParams, $firebaseAuth, $firebaseObject, Utils, FBURL) {
+    //Utils.calculateCircle($stateParams);
+    // var job = $stateParams.job;
 
+    var authRef = new Firebase(FBURL);
+    var authObj = $firebaseAuth(authRef);
+    var authData = authObj.$getAuth();
+
+    if (authData) {
+      var userRef = authRef.child('Users').child(authData.uid);
+      var userObj = $firebaseObject(userRef);
+
+      userObj.$loaded(function(data) {
+        $log.debug(data.justSelected);
+        $scope.chosenJob = data.justSelected;
+      });
+
+    };
+
+  })
+
+  ;
   /**
    * Fluxo das telas
    *
@@ -121,16 +308,3 @@ angular.module('ToSBuilder.controllers', [])
   Tela 4: Se já tiver alguma classe escolhida antes, mostrar a escolhida agora em destaque, mas mostrar as outras q já escolheu, tudo no topo. A tela é igual a tela 2, só com essa diferença
 
    */
-
-
-
-  .controller('SkillsCtrl', function($log, $scope, $stateParams, Utils) {
-    //Utils.calculateCircle($stateParams);
-    // var job = $stateParams.job;
-
-    $scope.chosenJob = $stateParams;
-    $log.info($stateParams);
-
-  })
-
-  ;

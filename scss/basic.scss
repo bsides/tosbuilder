@@ -1,0 +1,148 @@
+/* Empty. Add your own CSS if you like */
+body {
+  background: url(../img/bg.png) no-repeat -10px center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+}
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {
+  background-color: transparent;
+}
+.builder {
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
+  font-weight: bold;
+  color: #fff;
+
+  h2, h3, h4 {
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
+    font-weight: bold;
+    color: #fff;
+  }
+}
+.choose-class {
+  padding: 5px 12px;
+
+  .jicons {
+    margin: 0 auto;
+  }
+}
+.pane {
+  background-color: transparent;
+}
+.builder .list {
+  background-color: rgba(158, 140, 112, 0.3);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.button.not-really {
+  background-color: transparent;
+}
+.heading {
+
+  .left-heading {
+    img {
+      width: 177px;
+      object-position: 0 0;
+    }
+  }
+  .right-heading {
+    img {
+      width: 180px;
+      object-position: -223px 0;
+    }
+  }
+  .mid-heading {
+    background: url(../img/header.png) no-repeat center top;
+    height: 90px;
+    min-height: 110px;
+    padding: 16px 80px 11px;
+  }
+  div img {
+    height: 90px;
+    object-fit: none;
+  }
+  h2 {
+    margin: 5px auto 0;
+    text-align: center;
+    font-size: 1.4em;
+  }
+  h3 {
+    font-size: 1.2em;
+    margin: 15px auto 0;
+    text-align: center;
+  }
+  .skill-points {
+    margin: 6px auto 0;
+    text-align: center;
+
+    span {}
+  }
+}
+
+// header start: 0 - 177
+// header end: 224 - 401
+// header mid: 178 - 223
+
+.button.button-job {
+  padding: 0;
+  margin: 0;
+  position: relative;
+
+  .job-name {
+    // margin: -15px 0 -16px 0;
+  }
+  .job-circle {
+    margin-bottom: -22px;
+  }
+  .job-icon {
+    margin-bottom: -16px;
+  }
+
+  &:after {
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: 52px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 0;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    z-index: -1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: #29d;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}

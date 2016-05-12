@@ -87,7 +87,7 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
       })
 
       .state('tab.build-skills', {
-        url: '/build/skills?rank&name&circle',
+        url: '/build/skills',
         views: {
           'tab-build': {
             resolve: {
@@ -97,6 +97,21 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
             },
             templateUrl: 'templates/skills.html',
             controller: 'SkillsCtrl'
+          }
+        }
+      })
+
+      .state('tab.build-ranks', {
+        url: '/build/ranks?rank&name&circle&initial&classes',
+        views: {
+          'tab-build': {
+            resolve: {
+              // Add here the services which will be used to the skills
+              // Would be nice if the data would already come in the format
+              // that is needed by this view, like filtered by rank and circle
+            },
+            templateUrl: 'templates/ranks.html',
+            controller: 'RanksCtrl'
           }
         }
       })
@@ -116,7 +131,7 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
 
   })
 
-  .constant('FBURL', 'https://tosbuilder.firebaseio.com/Jobs')
+  .constant('FBURL', 'https://tosbuilder.firebaseio.com')
 
   .filter('rank1', function () {
     return function (job) {

@@ -1,6 +1,6 @@
-<ion-view title="New Build">
+<ion-view title="Rank {{ rankToSelect }}">
   <ion-content padding="false" class="has-header">
-    <div class="builder" ng-if="isDataLoaded">
+    <div class="builder">
 
       <div class="heading">
         <div class="mid-heading">
@@ -20,8 +20,7 @@
         <div class="row choose-class" ng-repeat="job in jobs" ng-if="$even">
 
           <div class="col col-50" ng-if="$index < jobs.length">
-            <button class="button button-block not-really button-job" ng-click="classSelected(jobs[$index])">
-              <!--  ui-sref="tab.build-skills({ rank: {{ rankToSelect }}, name: jobs[$index].name, circle: 1, initial: jobs[$index].name, classes: jobs[$index].name })" -->
+            <button class="button button-block not-really button-job" ui-sref="tab.build-skills({ rank: {{ rankToSelect }}, name: '{{ jobs[$index].name }}', circle: 1, initial: initialClass, classes: {{ classes }} })">
               <i class="jicons jicons-{{ jobs[$index].name | spaceless }} job-icon"></i>
               <div class="ion-ios-star job-circle"></div>
               <div class="job-name">{{ jobs[$index].name }}</div>
@@ -29,8 +28,7 @@
           </div>
 
           <div class="col col-50" ng-if="$index + 1 < jobs.length">
-            <button class="button button-block not-really button-job" ng-click="classSelected(jobs[$index + 1])">
-              <!-- ui-sref="tab.build-skills({ rank: {{ rankToSelect }}, name: jobs[$index + 1].name, circle: 1, initial: jobs[$index + 1].name, classes: jobs[$index + 1].name })" -->
+            <button class="button button-block not-really button-job" ui-sref="tab.build-skills({ rank: {{ rankToSelect }}, name: '{{ job[$index + 1].name }}', circle: 1, initial: initialClass, classes: {{ classes }} })">
               <i class="jicons jicons-{{ jobs[$index + 1].name | spaceless }} job-icon"></i>
               <div class="ion-ios-star job-circle"></div>
               <div class="job-name">{{ jobs[$index + 1].name }}</div>
