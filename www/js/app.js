@@ -8,8 +8,8 @@
 
 angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.services', 'firebase'])
 
-  .run(function ($ionicPlatform) {
-    $ionicPlatform.ready(function () {
+  .run(function($ionicPlatform) {
+    $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
       if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -24,7 +24,7 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
     });
   })
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider, $urlRouterProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router
@@ -79,9 +79,18 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
               // logStateParams: function ($stateParams) {
               //   console.log($stateParams);
               // }
+
+              // jobData: function($firebaseObject, FBURL, $q) {
+              //   var ref = new Firebase(FBURL + '/Jobs');
+              //   var obj = $firebaseObject(ref);
+              //   return obj.$loaded();
+              // },
+              jobData: function(Jobs) {
+                return Jobs.all();
+              }
             },
             templateUrl: 'templates/build.html',
-            controller: 'BuildCtrl'
+            controller: 'testCtrl'
           }
         }
       })
@@ -116,15 +125,15 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
         }
       })
 
-      // .state('tab.account', {
-      //   url: '/account',
-      //   views: {
-      //     'tab-account': {
-      //       templateUrl: 'templates/tab-account.html',
-      //       controller: 'AccountCtrl'
-      //     }
-      //   }
-      // });
+    // .state('tab.account', {
+    //   url: '/account',
+    //   views: {
+    //     'tab-account': {
+    //       templateUrl: 'templates/tab-account.html',
+    //       controller: 'AccountCtrl'
+    //     }
+    //   }
+    // });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/build');
@@ -133,8 +142,8 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
 
   .constant('FBURL', 'https://tosbuilder.firebaseio.com')
 
-  .filter('rank1', function () {
-    return function (job) {
+  .filter('rank1', function() {
+    return function(job) {
       var justRank1 = [];
       for (var i = 0; i < job.length; i++) {
         // for (var j = 0; j < job[i].length; j++) {

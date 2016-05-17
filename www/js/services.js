@@ -4,22 +4,22 @@ angular.module('ToSBuilder.services', [])
 
 
     return {
-      all: (function() {
+      all: function() {
         var ref = new Firebase(FBURL + '/Jobs');
         var obj = $firebaseObject(ref);
 
-        return obj;
-      } ()),
+        return obj.$loaded();
+      },
       getByName: function(jobName) {
         // var result = [];
         var ref = new Firebase(FBURL + '/Jobs/' + jobName);
         var obj = $firebaseObject(ref);
 
-        return obj;
+        return obj.$loaded();
       },
-      getByRank: function(rankLevel) {
-        var ref = new Firebase(FBURL + '/Jobs').startAt(rankLevel)
-      }
+      // getByRank: function(rankLevel) {
+      //   var ref = new Firebase(FBURL + '/Jobs').startAt(rankLevel)
+      // }
     };
 
     // return {
@@ -35,6 +35,9 @@ angular.module('ToSBuilder.services', [])
     //     return null;
     //   }
     // };
+  })
+  .factory('Users', function($log, $firebaseObject, FBURL) {
+
   })
 
   // .factory('User', function($firebaseAuth) {

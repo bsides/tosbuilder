@@ -26,6 +26,10 @@ gulp.task('sass', function(done) {
     .on('end', done);
 });
 
+gulp.task('serve', function(done) {
+  sh.exec('ionic serve --lab');
+});
+
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
 });

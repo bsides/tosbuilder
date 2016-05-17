@@ -1,16 +1,16 @@
 <ion-view title="Rank: {{ chosenJob.rank }} - Skills for {{ chosenJob.name }} ({{ chosenJob.circle }})">
   <ion-content padding="true" class="has-header">
-      <div class="heading">
-        <div class="mid-heading">
-          <h2>{{ header }}</h2>
-          <h3>{{ initialClass }}</h3>
+    <div class="heading" ng-if="isDataLoaded">
+      <div class="mid-heading">
+        <h2>{{ header }}</h2>
+        <h3>{{ initialClass }}</h3>
 
-          <div class="skill-points" ng-if="!isNewBuild">
-            Available Skill Points: <span>{{ skillPoints }}</span>
-          </div>
+        <div class="skill-points" ng-if="!isNewBuild">
+          Available Skill Points: <span>{{ skillPoints }}</span>
         </div>
       </div>
-    <ion-list>
+    </div>
+    <ion-list ng-if="isDataLoaded">
       <ion-item class="item-divider">Circle 1</ion-item>
       <ion-item class="item-avatar item-icon-right balanced">
         <h2balanced>Thrust
@@ -44,7 +44,7 @@
       </ion-item>
       <ion-item class="item-divider">Circle 2</ion-item>
     </ion-list>
-    <ion-list>
+    <ion-list ng-if="isDataLoaded">
       <ion-item class="item-avatar item-icon-right assertive">
         <h2assertive>Restrain
           <p>Level: 0</p>
@@ -57,6 +57,8 @@
           <i class="icon ion-android-add-circle"></i>
         </h2assertive>
       </ion-item>
+    </ion-list>
+    <ion-list ng-if="isDataLoaded">
       <ion-item class="item-divider">Circle 3</ion-item>
       <ion-item class="item-avatar item-icon-right assertive">
         <h2assertive>Double Slash
@@ -65,11 +67,11 @@
         </h2assertive>
       </ion-item>
     </ion-list>
-    <button id="rank1Swordsman-button5" class="button button-royal  button-block icon-left ion-android-attach">Add Attributes</button>
+    <button id="rank1Swordsman-button5" class="button button-royal  button-block icon-left ion-android-attach" ng-if="isDataLoaded">Add Attributes</button>
 
   </ion-content>
 
-  <ion-footer-bar class="bar tabs">
+  <ion-footer-bar class="bar tabs" ng-if="isDataLoaded">
     <!--<button ui-sref="tab.build-ranks({ rank: {{ chosenJob.rank * 1 + 1 }}, name: '{{ chosenJob.name }}', circle: {{chosenJob.circle}}, initial: '{{chosenJob.initial}}', classes: {{ classes }} })" class="button button-clear button-dark">Done, go to Rank {{ chosenJob.rank * 1 + 1 }} <i class="icon-right ion-arrow-right-a"></i></button>-->
     <button class="button button-clear button-dark">Done, go to Rank x <i class="icon-right ion-arrow-right-a"></i></button>
   </ion-footer-bar>
