@@ -79,180 +79,241 @@ angular.module('ToSBuilder.controllers', [])
 
   // })
 
-  .controller('testCtrl', function(jobData, $log) {
-    $log.log(jobData);
-  })
-
-  .controller('BuilderCtrl', function($scope, $log, $firebaseAuth, $firebaseObject, $state, $stateParams, $filter, Utils, jobData, FBURL) {
+  .controller('BuildCtrl', function(jobData, userIsAuthorized, userPath, $log, $scope, $state, $firebaseObject, $stateParams, Utils) {
     // This is already false at this stage, we just make it here for reading purposes
     $scope.isDataLoaded = false;
-    // To check if it's a new build
-    $scope.isNewBuild = true;
 
-    // Get all data from DB (resolved in the router)
+    var userObj = userPath;
     var data = jobData;
-    var userData = userData;
-    jobData.then(function() { console.log('oi')});
-    $log.log(jobData);
+    var rank;
+
+    // To check if it's a new build
+    $scope.isNewBuild = false;
+    if (typeof $stateParams.rank === 'undefined') {
+      $scope.isNewBuild = true;
+      rank = 1;
+    } else {
+      rank = $stateParams.rank * 1;
+    };
+    $scope.rankToSelect = rank;
+    $scope.InitialClass = 'Wat';
+    $scope.header = 'Select a Class';
+
 
     // To populate with only jobs we want
     $scope.jobs = [];
 
-    $scope.rankge = Utils.range;
-
-
-    var fbRef = new Firebase(FBURL);
-    var authObj = $firebaseAuth(fbRef);
-    var authData = authObj.$getAuth();
-
-    var userRef, userObj;
-    if (authData === null) {
-      authObj.$authAnonymously().then(function(authData) {
-        afterAuth();
-      }).catch(function(error) {
-        $log.error(error);
-      });
-    } else {
-      afterAuth();
-    };
-
-    function afterAuth() {
-      // Grab the user session and initiate user object that we'll record data input
-      userRef = fbRef.child('Users').child(authData.uid);
-      buildRef = userRef.child('Builds');
-
-      userObj = $firebaseObject(userRef);
-      buildsObj = $firebaseObject(buildRef);
-
-      // Check if this is a new build
-      userObj.$loaded(function() {
-
-        // We'll run through it and check if there's any build. If empty, this is a new one.
-        angular.forEach(userObj, function(val, key) {
-          $scope.isNewBuild = true;
-        });
-
-        if ($scope.isNewBuild) {
-          $scope.rankToSelect = 1;
-          $scope.initialClass = 'Initial Class';
-          $scope.header = 'Select a Class';
-          rank = 1;
-        }
-
-        $scope.classSelected = function(jobData) {
-          userObj.Builds = {};
-          userObj.Builds[rank] = {
-            circle: 1,
-            name: jobData.name,
-            index: jobData.index
-          };
-          userObj.justSelected = {};
-          userObj.justSelected = jobData;
-          userObj.justSelected.circle = 1;
-
-          userObj.$save().then(function() {
-            $state.go('tab.build-skills');
-          }, function(error) {
-            $log.error(error);
-          });
-        };
-
-        data.$loaded(function() {
-          angular.forEach(data, function(val, key) {
-            if (rank === val.requiredRank * 1) {
-              $scope.jobs.push(val);
-            };
-          });
-          $scope.isDataLoaded = true;
-        });
-      });
-    };
-
-  })
-
-  .controller('BuildCtrl', function($scope, $log, $firebaseAuth, $firebaseObject, $state, $stateParams, $filter, Utils, Jobs, FBURL) {
-    var data = Jobs.all;
-    var isNewBuild = false;
-    var rank = 0;
-    $scope.jobs = [];
     $scope.range = Utils.range;
 
-    var fbRef = new Firebase(FBURL);
-    var authObj = $firebaseAuth(fbRef);
-    var authData = authObj.$getAuth();
+    // We'll run through it and check if there's any build. If empty, this is a new one
+    $scope.classSelected = function(theJobData) {
+      userObj.Builds = userObj.Builds || {};
+      userObj.Builds[rank] = theJobData;
 
-    var userRef, userObj, keepGoing;
-    if (authData === null) {
-      authObj.$authAnonymously().then(function(authData) {
-        keepGoing();
-      }).catch(function(error) {
+      userObj.$save().then(function() {
+        $state.go($state.current, {rank: rank + 1}, {reload: true});
+      }, function(error) {
         $log.error(error);
       });
-    } else {
-      keepGoing();
     };
 
-    function keepGoing() {
-      // Grab the user session
-      userRef = fbRef.child('Users').child(authData.uid);
-      userObj = $firebaseObject(userRef);
-
-      // Check if this is a new build
-      if (Object.keys($stateParams).length === 0) {
-        isNewBuild = true;
-        $scope.isNewBuild = isNewBuild;
-      };
-      // If it'a a new build, we fill in starter data
-      if (isNewBuild) {
-        $scope.rankToSelect = 1;
-        $scope.initialClass = 'Initial Class';
-        $scope.header = 'Select a Class';
-        rank = 1;
-
-        // userObj.$save().then(function(ref) {
-        //   console.log(ref);
-        // }, function(error) {
-        //   $log.log(error);
-        // });
-      } else {
-        // else we get data from GET and prep others
-        rank = $stateParams.rank;
-      };
-
-      //   rank1 = Jobs.getByName("Archer");
-      // rank1.$loaded(function() {
-      //   $log.log(rank1.rank);
-      // });
-
-      $scope.classSelected = function(jobData) {
-        userObj.newBuildHash = {};
-        userObj.newBuildHash[rank] = {
-          circle: 1,
-          name: jobData.name,
-          index: jobData.index
-        };
-        userObj.justSelected = {};
-        userObj.justSelected = jobData;
-        userObj.justSelected.circle = 1;
-
-        userObj.$save().then(function() {
-          $state.go('tab.build-skills');
-        }, function(error) {
-          $log.error(error);
-        });
-      };
-
-      data.$loaded(function() {
-        angular.forEach(data, function(val, key) {
-          if (rank === val.rank * 1) {
+    // Populate the right data into the right time
+    // This depends on rank and circle
+    angular.forEach(data, function(val, key) {
+      var reqRank = val.requiredRank * 1;
+      if (rank > 1) {
+        if (rank > reqRank) {
+          // $log.log(val);
+          if (typeof userObj.Builds[rank - 1].initial === 'undefined') {
+            // This is rank 1 so manually inputting data ftw
+            val.circle = userObj.Builds[rank - 1].circle * 1 + 1;
+            $scope.jobs.push(val);
+          } else if (userObj.Builds[rank - 1].circle < 3 && val.initial === userObj.Builds[1].name) {
+            // $scope.jobs.push(val);
+            val.circle = userObj.Builds[rank - 1].circle * 1 + 1;
             $scope.jobs.push(val);
           };
-        });
-        $scope.isDataLoaded = true;
-      });
+        };
+      };
+      if (rank === reqRank && rank === 1) {
+        val.circle = 1;
+        $scope.jobs.push(val);
+      };
+
+    });
+    $scope.isDataLoaded = true;
+  })
+
+  // .controller('BuilderCtrl', function($scope, $log, $firebaseAuth, $firebaseObject, $state, $stateParams, $filter, Utils, jobData, FBURL) {
+  //   // This is already false at this stage, we just make it here for reading purposes
+  //   $scope.isDataLoaded = false;
+  //   // To check if it's a new build
+  //   $scope.isNewBuild = true;
+
+  //   // Get all data from DB (resolved in the router)
+  //   var data = jobData;
+  //   var userData = userData;
+  //   jobData.then(function() { console.log('oi')});
+  //   $log.log(jobData);
+
+  //   // To populate with only jobs we want
+  //   $scope.jobs = [];
+
+  //   $scope.rankge = Utils.range;
 
 
-    };
+  //   var fbRef = new Firebase(FBURL);
+  //   var authObj = $firebaseAuth(fbRef);
+  //   var authData = authObj.$getAuth();
+
+  //   var userRef, userObj;
+  //   if (authData === null) {
+  //     authObj.$authAnonymously().then(function(authData) {
+  //       afterAuth();
+  //     }).catch(function(error) {
+  //       $log.error(error);
+  //     });
+  //   } else {
+  //     afterAuth();
+  //   };
+
+  //   function afterAuth() {
+  //     // Grab the user session and initiate user object that we'll record data input
+  //     userRef = fbRef.child('Users').child(authData.uid);
+  //     buildRef = userRef.child('Builds');
+
+  //     userObj = $firebaseObject(userRef);
+  //     buildsObj = $firebaseObject(buildRef);
+
+  //     // Check if this is a new build
+  //     userObj.$loaded(function() {
+
+  //       // We'll run through it and check if there's any build. If empty, this is a new one.
+  //       angular.forEach(userObj, function(val, key) {
+  //         $scope.isNewBuild = true;
+  //       });
+
+  //       if ($scope.isNewBuild) {
+  //         $scope.rankToSelect = 1;
+  //         $scope.initialClass = 'Initial Class';
+  //         $scope.header = 'Select a Class';
+  //         rank = 1;
+  //       }
+
+  //       $scope.classSelected = function(jobData) {
+  //         userObj.Builds = {};
+  //         userObj.Builds[rank] = {
+  //           circle: 1,
+  //           name: jobData.name,
+  //           index: jobData.index
+  //         };
+  //         userObj.justSelected = {};
+  //         userObj.justSelected = jobData;
+  //         userObj.justSelected.circle = 1;
+
+  //         userObj.$save().then(function() {
+  //           $state.go('tab.build-skills');
+  //         }, function(error) {
+  //           $log.error(error);
+  //         });
+  //       };
+
+  //       data.$loaded(function() {
+  //         angular.forEach(data, function(val, key) {
+  //           if (rank === val.requiredRank * 1) {
+  //             $scope.jobs.push(val);
+  //           };
+  //         });
+  //         $scope.isDataLoaded = true;
+  //       });
+  //     });
+  //   };
+
+  // })
+
+  // .controller('BuildCtrl', function($scope, $log, $firebaseAuth, $firebaseObject, $state, $stateParams, $filter, Utils, Jobs, FBURL) {
+  //   var data = Jobs.all;
+  //   var isNewBuild = false;
+  //   var rank = 0;
+  //   $scope.jobs = [];
+  //   $scope.range = Utils.range;
+
+  //   var fbRef = new Firebase(FBURL);
+  //   var authObj = $firebaseAuth(fbRef);
+  //   var authData = authObj.$getAuth();
+
+  //   var userRef, userObj, keepGoing;
+  //   if (authData === null) {
+  //     authObj.$authAnonymously().then(function(authData) {
+  //       keepGoing();
+  //     }).catch(function(error) {
+  //       $log.error(error);
+  //     });
+  //   } else {
+  //     keepGoing();
+  //   };
+
+  //   function keepGoing() {
+  //     // Grab the user session
+  //     userRef = fbRef.child('Users').child(authData.uid);
+  //     userObj = $firebaseObject(userRef);
+
+  //     // Check if this is a new build
+  //     if (Object.keys($stateParams).length === 0) {
+  //       isNewBuild = true;
+  //       $scope.isNewBuild = isNewBuild;
+  //     };
+  //     // If it'a a new build, we fill in starter data
+  //     if (isNewBuild) {
+  //       $scope.rankToSelect = 1;
+  //       $scope.initialClass = 'Initial Class';
+  //       $scope.header = 'Select a Class';
+  //       rank = 1;
+
+  //       // userObj.$save().then(function(ref) {
+  //       //   console.log(ref);
+  //       // }, function(error) {
+  //       //   $log.log(error);
+  //       // });
+  //     } else {
+  //       // else we get data from GET and prep others
+  //       rank = $stateParams.rank;
+  //     };
+
+  //     //   rank1 = Jobs.getByName("Archer");
+  //     // rank1.$loaded(function() {
+  //     //   $log.log(rank1.rank);
+  //     // });
+
+  //     $scope.classSelected = function(jobData) {
+  //       userObj.newBuildHash = {};
+  //       userObj.newBuildHash[rank] = {
+  //         circle: 1,
+  //         name: jobData.name,
+  //         index: jobData.index
+  //       };
+  //       userObj.justSelected = {};
+  //       userObj.justSelected = jobData;
+  //       userObj.justSelected.circle = 1;
+
+  //       userObj.$save().then(function() {
+  //         $state.go('tab.build-skills');
+  //       }, function(error) {
+  //         $log.error(error);
+  //       });
+  //     };
+
+  //     data.$loaded(function() {
+  //       angular.forEach(data, function(val, key) {
+  //         if (rank === val.rank * 1) {
+  //           $scope.jobs.push(val);
+  //         };
+  //       });
+  //       $scope.isDataLoaded = true;
+  //     });
+
+
+  //   };
 
 
     // authObj.$authAnonymously().then(function(authData) {
@@ -310,7 +371,7 @@ angular.module('ToSBuilder.controllers', [])
     //   $log.error(error);
     // });
 
-  })
+  // })
   .controller('RanksCtrl', function($scope, $log, $stateParams, $filter, Utils, Jobs) {
     var data = Jobs.all;
     var isNewBuild = false;

@@ -1,12 +1,12 @@
 angular.module('ToSBuilder.services', [])
 
-  .factory('Jobs', function($log, $firebaseObject, FBURL) {
+  .factory('Jobs', function($log, $firebaseObject, $firebaseArray, FBURL) {
 
 
     return {
       all: function() {
         var ref = new Firebase(FBURL + '/Jobs');
-        var obj = $firebaseObject(ref);
+        var obj = $firebaseArray(ref);
 
         return obj.$loaded();
       },
@@ -36,8 +36,28 @@ angular.module('ToSBuilder.services', [])
     //   }
     // };
   })
-  .factory('Users', function($log, $firebaseObject, FBURL) {
+  .factory('Users', function($log, $firebaseAuth, $firebaseObject, FBURL) {
+    var fbRef = new Firebase(FBURL);
+    var authObj = $firebaseAuth(fbRef);
+    var authData = authObj.$getAuth();
+    var authPath = fbRef.child('Users').child(authData.uid);
+    var isAuthorized = false;
 
+    if (authData === null) {
+      authObj.$authAnonymously().then(function(authData) {
+        isAuthorized = true;
+      }).catch(function(error) {
+        $log.error(error);
+      });
+    } else {
+      isAuthorized = true;
+    };
+
+    return {
+      isAuthorized: isAuthorized,
+      authData: authData,
+      authPath: $firebaseObject(authPath)
+    };
   })
 
   // .factory('User', function($firebaseAuth) {

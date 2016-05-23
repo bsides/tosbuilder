@@ -71,7 +71,7 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
       // })
 
       .state('tab.build', {
-        url: '/build',
+        url: '/build?rank',
         views: {
           'tab-build': {
             resolve: {
@@ -85,12 +85,21 @@ angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.ser
               //   var obj = $firebaseObject(ref);
               //   return obj.$loaded();
               // },
+              userIsAuthorized: function(Users) {
+                return Users.isAuthorized;
+              },
+              userAuthData: function(Users) {
+                return Users.authData;
+              },
+              userPath: function(Users) {
+                return Users.authPath;
+              },
               jobData: function(Jobs) {
                 return Jobs.all();
               }
             },
             templateUrl: 'templates/build.html',
-            controller: 'testCtrl'
+            controller: 'BuildCtrl'
           }
         }
       })

@@ -24,7 +24,11 @@
             <button class="button button-block not-really button-job" ng-click="classSelected(jobs[$index])">
               <!--  ui-sref="tab.build-skills({ rank: {{ rankToSelect }}, name: jobs[$index].name, circle: 1, initial: jobs[$index].name, classes: jobs[$index].name })" -->
               <i class="jicons jicons-{{ jobs[$index].name | spaceless }} job-icon"></i>
-              <div class="ion-ios-star job-circle"></div>
+              <div>
+                <span class="ion-ios-star job-circle">
+                <span class="ion-ios-star job-circle" ng-if="jobs[$index].circle == 2"></span>
+                <span class="ion-ios-star job-circle" ng-if="jobs[$index].circle == 3"></span>
+              </div>
               <div class="job-name">{{ jobs[$index].name }}</div>
             </button>
           </div>
@@ -33,7 +37,11 @@
             <button class="button button-block not-really button-job" ng-click="classSelected(jobs[$index + 1])">
               <!-- ui-sref="tab.build-skills({ rank: {{ rankToSelect }}, name: jobs[$index + 1].name, circle: 1, initial: jobs[$index + 1].name, classes: jobs[$index + 1].name })" -->
               <i class="jicons jicons-{{ jobs[$index + 1].name | spaceless }} job-icon"></i>
-              <div class="ion-ios-star job-circle"></div>
+              <div>
+                <span class="ion-ios-star job-circle">
+                <span class="ion-ios-star job-circle" ng-if="jobs[$index + 1].circle == 2"></span>
+                <span class="ion-ios-star job-circle" ng-if="jobs[$index + 1].circle == 3"></span>
+              </div>
               <div class="job-name">{{ jobs[$index + 1].name }}</div>
             </button>
           </div>
