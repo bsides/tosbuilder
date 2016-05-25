@@ -5,6 +5,19 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+function extend(base) {
+    var parts = Array.prototype.slice.call(arguments, 1);
+    parts.forEach(function (p) {
+        if (p && typeof (p) === 'object') {
+            for (var k in p) {
+                if (p.hasOwnProperty(k)) {
+                    base[k] = p[k];
+                }
+            }
+        }
+    });
+    return base;
+}
 
 angular.module('ToSBuilder', ['ionic', 'ToSBuilder.controllers', 'ToSBuilder.services', 'firebase'])
 

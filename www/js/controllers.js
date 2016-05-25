@@ -79,7 +79,7 @@ angular.module('ToSBuilder.controllers', [])
 
   // })
 
-  .controller('BuildCtrl', function(jobData, userIsAuthorized, userPath, $log, $scope, $state, $firebaseObject, $stateParams, Utils) {
+  .controller('BuildCtrl', function(jobData, userIsAuthorized, userPath, $log, $scope, $state, $firebaseObject, $stateParams, Jobs, Utils) {
     // This is already false at this stage, we just make it here for reading purposes
     $scope.isDataLoaded = false;
 
@@ -88,11 +88,11 @@ angular.module('ToSBuilder.controllers', [])
     var rank;
 
     // To check if it's a new build
-    $scope.isNewBuild = false;
     if (typeof $stateParams.rank === 'undefined') {
       $scope.isNewBuild = true;
       rank = 1;
     } else {
+      $scope.isNewBuild = false;
       rank = $stateParams.rank * 1;
     };
     $scope.rankToSelect = rank;
@@ -119,28 +119,52 @@ angular.module('ToSBuilder.controllers', [])
 
     // Populate the right data into the right time
     // This depends on rank and circle
-    angular.forEach(data, function(val, key) {
-      var reqRank = val.requiredRank * 1;
-      if (rank > 1) {
-        if (rank > reqRank) {
-          // $log.log(val);
-          if (typeof userObj.Builds[rank - 1].initial === 'undefined') {
-            // This is rank 1 so manually inputting data ftw
-            val.circle = userObj.Builds[rank - 1].circle * 1 + 1;
-            $scope.jobs.push(val);
-          } else if (userObj.Builds[rank - 1].circle < 3 && val.initial === userObj.Builds[1].name) {
-            // $scope.jobs.push(val);
-            val.circle = userObj.Builds[rank - 1].circle * 1 + 1;
-            $scope.jobs.push(val);
-          };
-        };
-      };
-      if (rank === reqRank && rank === 1) {
-        val.circle = 1;
-        $scope.jobs.push(val);
-      };
 
-    });
+    if (rank === 1) {
+      angular.forEach(data, function(val, key) {
+        var valRank = val.requiredRank * 1;
+        if (valRank === rank) {
+          val.circle = 1;
+          $scope.jobs.push(val);
+        };
+      });
+    } else {
+      angular.forEach(data, function(val, key) {
+        var valRank = val.requiredRank * 1;
+        if (valRank === rank && val.initial === userObj.Builds[1].name) {
+          // Past rank was rank 1 so we manually do what we did above
+          $scope.jobs.push(val);
+        };
+        for (var i = 1; i < userObj.Builds.length; i++) {
+          if (userObj.Builds[i].name === val.name) {
+            val.circle = userObj.Builds[i].circle + 1;
+            $scope.jobs.push(val);
+          }
+        }
+      });
+    }
+    // angular.forEach(data, function(val, key) {
+    //   var reqRank = val.requiredRank * 1;
+    //   if (rank > 1) {
+    //     if (rank > reqRank) {
+    //       // $log.log(val);
+    //       if (typeof userObj.Builds[rank - 1].initial === 'undefined') {
+    //         // This is rank 1 so manually inputting data ftw
+    //         val.circle = userObj.Builds[rank - 1].circle * 1 + 1;
+    //         $scope.jobs.push(val);
+    //       } else if (userObj.Builds[rank - 1].circle < 3 && val.initial === userObj.Builds[1].name) {
+    //         // $scope.jobs.push(val);
+    //         val.circle = userObj.Builds[rank - 1].circle * 1 + 1;
+    //         $scope.jobs.push(val);
+    //       };
+    //     };
+    //   };
+    //   if (rank === reqRank && rank === 1) {
+    //     val.circle = 1;
+    //     $scope.jobs.push(val);
+    //   };
+
+    // });
     $scope.isDataLoaded = true;
   })
 

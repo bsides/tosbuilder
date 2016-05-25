@@ -1,12 +1,12 @@
 angular.module('ToSBuilder.services', [])
 
-  .factory('Jobs', function($log, $firebaseObject, $firebaseArray, FBURL) {
+  .factory('Jobs', function($log, $firebaseObject, $firebaseArray, $filter, FBURL) {
 
 
     return {
       all: function() {
         var ref = new Firebase(FBURL + '/Jobs');
-        var obj = $firebaseArray(ref);
+        var obj = $firebaseObject(ref);
 
         return obj.$loaded();
       },
